@@ -12,7 +12,7 @@ app.listen(1001, ()=>{
     console.log("server listening on - http://localhost:1001/")
 })
 browserSync.init({
-    proxy: "http://localhost:1001", //this 
+    proxy: "http://localhost:1001",
     // setup what files or folders should be watched **/* means watch a folder recursively
     files: ["views/**/*", "public/scripts"],
     port: 3000, //the port that browserSync uses
