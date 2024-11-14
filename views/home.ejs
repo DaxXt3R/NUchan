@@ -1,0 +1,27 @@
+<!DOCTYPE html >
+<html lang="en" data-theme="dark" class="bg-white">
+
+<!-- -------------------- HEAD -------------------- -->
+<%- include("partials/head.ejs") %>
+<head>
+    <title>NUchan</title>
+</head>
+
+
+<body>
+	<div id="gridContainer" class="grid grid-cols-[260px_1fr] grid-rows-[60px_auto_100px] h-screen">
+        <!-- -------------------- HEADER -------------------- -->
+        <%- include("partials/header") %>
+        <!-- -------------------- SIDEBAR -------------------- -->
+        <%- include("partials/sidebar") %>
+        <!-- -------------------- MAIN CONTENT -------------------- -->
+        <div id="mainContent" class=" col-span-1 bg-black">
+
+        </div>
+
+        <footer id="footer" class="col-span-2 bg-slate-800">
+
+        </footer>
+    </div>
+</body>
+</html>

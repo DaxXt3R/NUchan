@@ -2,7 +2,9 @@
 module.exports = {
   content: ["./views/**/*"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { 'spline': ['Spline Sans', 'sans-serif']},
+      }
   },
   plugins: [
     require('daisyui'),
