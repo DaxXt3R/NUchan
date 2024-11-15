@@ -1,38 +1,126 @@
-<aside id="sidebar" class="bg-[#FFCCAA] col-span-1 row-span-1 font-spline">
-    <ul class="flex flex-col p-4 text-lg gap-2 text-black">
+<aside id="sidebar" class="bg-[#FFCCAA] col-span-1 row-span-1 font-spline overflow-auto">
+    <ul class="flex flex-col p-4 text-lg gap-2 text-black h-full">
+        
         <a href="/home" class="sidebar-button">
             <span class="material-symbols-rounded">home</span>
             Home</a>
         <a href="/hot" class="sidebar-button">
             <span class="material-symbols-outlined fill-current">local_fire_department</span>
             Hot</a>
+        
+        <!-- -------------------- ACCOUNT -------------------- -->
+
         <hr class="w-full border-black border-t-2 rounded-full my-1">
+        
         <a href="/bookmarked" class="sidebar-button">
             <span class="material-symbols-rounded">bookmark</span>
             Bookmarked</a>
+        
         <a href="/posts&replies" class="sidebar-button">
             <span class="material-symbols-rounded">forum</span>
             Posts & Replies</a>
+        
         <a href="/history" class="sidebar-button">
             <span class="material-symbols-rounded">history</span>
             History</a>
+        
         <a href="/settings" class="sidebar-button">
             <span class="material-symbols-rounded">settings</span>
             Settings</a>
-
+        
+        <!-- -------------------- BOARD LIST -------------------- -->
         <hr class="w-full border-black border-t-2 rounded-full my-1">
 
         <input type="text" placeholder="Search" class="input rounded-lg bg-white">
         
-        <a href="/post/id" id="boardButton" class=" sidebar-button">
-            <span class="">/v/</span>
-            <span class="truncate">template board template board</span>
-            <!-- <span style="font-variation-settings: 'FILL' 1;" class="material-symbols-rounded rotate-45 fill-current text-red-800">keep</span> -->
-            <svg class="rotate-45 fill-current text-red-800/50 w-12" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M620-760v288.46l62.61 62.62q4.46 4.46 6.7 10.04 2.23 5.57 2.23 11.52v17.1q0 12.64-8.74 21.45-8.73 8.81-21.65 8.81H510v215.54q0 12.75-8.63 21.37-8.63 8.62-21.38 8.62-12.76 0-21.37-8.62-8.62-8.62-8.62-21.37V-340H298.85q-12.92 0-21.65-8.81-8.74-8.81-8.74-21.45v-17.1q0-5.95 2.23-11.52 2.24-5.58 6.7-10.04L340-471.54V-760h-10q-12.75 0-21.37-8.63-8.63-8.63-8.63-21.38 0-12.76 8.63-21.37Q317.25-820 330-820h300q12.75 0 21.37 8.63 8.63 8.63 8.63 21.38 0 12.76-8.63 21.37Q642.75-760 630-760h-10Z"/></svg>
-         
-
-        </a>
+        <ul id="boardContainer" class="flex flex-col text-[inherit] gap-[inherit] overflow-y-auto overflow-x-hidden">
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class="sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+            <a href="/post/id" id="boardButton" class=" sidebar-button">
+                <span class="">/v/</span>
+                <span class="truncate flex-grow">templatetemplatetemplate</span>
+                <img class="rotate-45 w-10" src="/img/pin.svg" alt="">
+            </a>
+        </ul>
 
     </ul>
 </aside>
-<script src="/scripts/sidebar.js"></script>
+<script type="module" src="/scripts/sidebar.js"></script>

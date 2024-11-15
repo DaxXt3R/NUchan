@@ -20,9 +20,30 @@ browserSync.init({
 })
 
 
+// --------------------------- FETCH DATA FROM 4CHAN THROUGH PROXY ---------------------------
+const { createProxyMiddleware } = require('http-proxy-middleware');
+const { default: axios } = require("axios");
+const { log } = require("console");
+app.use('/4chan', createProxyMiddleware({
+    target: "https://a.4cdn.org",
+    changeOrigin: true,
+    pathRewrite: {
+        "^/4chan": ""   /* this removes the /4chan prefix when forwarding to target */
+    }
+}))
 
 // ---------------------------  ---------------------------
 
 app.get('/', (req,res)=>{
     res.render('home.ejs')
 })
+
+app.get("/boards", async(req,res)=>{
+    try{
+        const response=await axios.get("http://localhost:1001/4chan/boards.json");
+        res.json(response.data);
+    } catch(error){
+        console.error(" ---------ERROR GETTING 4CHAN DATA FROM PROXY---------", error)
+    }
+})
+// axios.get('http://localhost:1001/boards')
