@@ -27,6 +27,8 @@ async function initializeSidebar() {
       pinIcon.parentElement.classList.toggle("pinned");
       pinIcon.classList.toggle("pinned");
     });
+    // add href
+    aTag.href="/boards/"+i.board
 
     document.getElementById("boardContainer").append(aTag);
   }

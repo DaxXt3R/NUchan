@@ -4,9 +4,8 @@
 <!-- -------------------- HEAD -------------------- -->
 <%- include("partials/head.ejs") %>
 <head>
-    <title>NUchan:Hot</title>
+    <title>board</title>
 </head>
-
 
 <body>
 	<div id="gridContainer" class="grid grid-cols-[320px_1fr] grid-rows-[60px_auto] h-screen">
@@ -16,17 +15,11 @@
         <%- include("partials/sidebar") %>
         <!-- -------------------- MAIN CONTENT -------------------- -->
         <main id="mainContent" class=" col-span-1 bg-[#FFFFEE] text-black">
-            <h1 class="text-9xl">HOT</h1>
-            <span>
-                <img src="" alt="">
-            </span>
-
-
-
-
-
+            <h1 class="text-9xl">BOARDS TEMPLATE</h1>
+            <h2 class="text-2xl"><%= data.message %></h2>
 
         </main>
+
     </div>
 </body>
 </html>

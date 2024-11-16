@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
   res.render("home.ejs");
 });
 
-app.get("/boards", async (req, res) => {
+app.get("/initSidebar", async (req, res) => {
   try {
     const response = await axios.get("http://localhost:1001/4chan/boards.json");
     res.json(response.data);
@@ -53,6 +53,9 @@ app.get("/boards", async (req, res) => {
   }
 });
 // axios.get('http://localhost:1001/boards')
+
+const boardsRouter=require('./routes/boards.js')
+app.use('/boards',boardsRouter)
 
 app.get("/hot", (req, res) => {
   res.render("hot.ejs");
