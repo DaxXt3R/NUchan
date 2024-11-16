@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* this is how you make your own classes with tailwind, everything after @apply gets substituted for the class name */
-.sidebar-button{
-    @apply hover:bg-slate-50/50 hover:rounded-lg flex align-middle gap-2 p-1;
+.sidebar-button {
+  @apply flex gap-2 p-1 align-middle hover:rounded-lg hover:bg-slate-50/50;
+}
+
+.pinIcon {
+  @apply w-6 rotate-45;
+}
+.pinIcon.pinned {
+  @apply w-6 rotate-0;
 }

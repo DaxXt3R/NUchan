@@ -3,14 +3,11 @@ module.exports = {
   content: ["./views/**/*"],
   theme: {
     extend: {
-      fontFamily: { 'spline': ['Spline Sans', 'sans-serif']},
-      }
+      fontFamily: { spline: ["Spline Sans", "sans-serif"] },
+    },
   },
-  plugins: [
-    require('daisyui'),
-  ],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: ["light", "dark", "cupcake"],
-  }
-}
-
+  },
+};
