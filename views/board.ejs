@@ -14,10 +14,12 @@
         <!-- -------------------- SIDEBAR -------------------- -->
         <%- include("partials/sidebar") %>
         <!-- -------------------- MAIN CONTENT -------------------- -->
-        <main id="mainContent" class=" col-span-1 bg-[#FFFFEE] text-black">
+        <main id="mainContent" class="p-10 items-center flex flex-col overflow-auto col-span-1 bg-[#FFFFEE] text-black">
             <h1 class="text-9xl">BOARDS TEMPLATE</h1>
-            <h2 class="text-2xl"><%= data.message %></h2>
-
+            <h2 class="text-2xl break-all w-fit"><%= JSON.stringify(data) %></h2>
+            <script>
+                console.log(data)
+            </script>
         </main>
 
     </div>

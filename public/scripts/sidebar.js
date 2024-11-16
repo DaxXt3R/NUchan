@@ -2,7 +2,7 @@
 // const boardsList=axios.get("/boards")
 
 async function initializeSidebar() {
-  const response = await axios.get("/boards");
+  const response = await axios.get("/initSidebar");
   const boardList = response.data;
   console.log(boardList);
   for (let i of boardList.boards) {
@@ -26,6 +26,8 @@ async function initializeSidebar() {
     pinIcon.addEventListener("click", function () {
       pinIcon.parentElement.classList.toggle("pinned");
       pinIcon.classList.toggle("pinned");
+      e.stopPropagation();
+      e.preventDefault();
     });
     // add href
     aTag.href="/boards/"+i.board
