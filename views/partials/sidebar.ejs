@@ -45,3 +45,8 @@
     </ul>
 </aside>
 <script type="module" src="/scripts/sidebar.js"></script>
+<script>
+    // the second boardList is sent from the server, we save it in the first one so we can use it client-side
+    const boardList = <%- JSON.stringify(boardList) %>
+    // console.log(boardList)
+</script>

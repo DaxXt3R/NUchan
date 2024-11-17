@@ -35,28 +35,30 @@ app.use(
   }),
 );
 
-// ---------------------------  ---------------------------
-
-app.get("/", (req, res) => {
-  res.render("home.ejs");
-});
-
-app.get("/initSidebar", async (req, res) => {
-  try {
-    const response = await axios.get("http://localhost:1001/4chan/boards.json");
-    res.json(response.data);
+// --------------------------- GET BOARD LIST FROM 4CHAN ---------------------------
+const chalk = require('chalk');
+var boardListJSON=[]
+async function getBoardList() {
+  try{
+    boardListJSON = await axios.get("http://localhost:1001/4chan/boards.json");
+    console.log(chalk.yellow("-----UPDATED BOARD LIST FROM 4CHAN API-----"))
+    // console.log(boardListJSON.data)
   } catch (error) {
-    console.error(
-      " ---------ERROR GETTING 4CHAN DATA FROM PROXY---------",
-      error,
-    );
-  }
-});
-// axios.get('http://localhost:1001/boards')
+    console.error("-----COULDN'T GET 4CHAN BOARD LIST-----",error,)
+  }  
+}
+getBoardList()
+setInterval(getBoardList,60*60*1000)  /* 60 minutes * 60 seconds * 1000 miliseconds, 1second=1000miliseconds */
+module.exports={getBoardListJSON:()=>boardListJSON}
 
+
+// --------------------------- ROUTERS ---------------------------
 const boardsRouter=require('./routes/boards.js')
 app.use('/boards',boardsRouter)
 
+app.get("/", (req, res) => {
+  res.render('home.ejs', {boardList:boardListJSON.data})
+});
 app.get("/hot", (req, res) => {
   res.render("hot.ejs");
 });
@@ -64,6 +66,3 @@ app.get("/settings", (req, res) => {
   res.render("settings.ejs");
 });
 
-app.get("/boards/:id", (req, res) => {
-  res.send();
-});

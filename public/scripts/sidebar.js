@@ -2,8 +2,6 @@
 // const boardsList=axios.get("/boards")
 
 async function initializeSidebar() {
-  const response = await axios.get("/initSidebar");
-  const boardList = response.data;
   console.log(boardList);
   for (let i of boardList.boards) {
     // create the anchor tag container for everything
