@@ -12,7 +12,7 @@ router.get('/:boardName',async(req,res)=>{
     const chanPage=await axios.get(`https://a.4cdn.org/${req.params.boardName}/1.json`)
     const boardListJSON=await getBoardListJSON();
     // console.log(boardListJSON.data)
-    res.render('board.ejs', {data:chanPage.data, boardList:boardListJSON.data})
+    res.render('board.ejs', {data:chanPage.data, boardList:boardListJSON.data, currentBoard:req.params.boardName})
 })
 
 module.exports = router;

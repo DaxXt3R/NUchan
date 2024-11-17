@@ -8,13 +8,13 @@ async function initializeSidebar() {
     const aTag = document.createElement("a");
     aTag.classList.add("sidebar-button");
     // add board letter
-    const boardLetter = document.createElement("span");
+    const boardLetter = document.createElement("h4");
     boardLetter.innerHTML = "/" + i.board + "/";
     aTag.append(boardLetter);
     // add board full name
-    const boardName = document.createElement("span");
-    boardName.innerHTML = i.title;
-    boardName.classList.add("truncate", "flex-grow");
+    const boardName = document.createElement("h4");
+    boardName.innerHTML = "- "+i.title;
+    boardName.classList.add("truncate", "flex-grow", 'pl-2');
     aTag.append(boardName);
     // add pin icon
     const pinIcon = document.createElement("img");

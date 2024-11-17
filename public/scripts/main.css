@@ -4,8 +4,12 @@
 
 /* this is how you make your own classes with tailwind, everything after @apply gets substituted for the class name */
 .sidebar-button {
-  @apply flex gap-2 p-1 align-middle hover:rounded-lg hover:bg-slate-50/50;
+  @apply flex gap-1 p-1 items-center hover:rounded-lg hover:bg-slate-50/50;
 }
+.sidebar-button span{ /* this is for the icons in the sidebar */
+  font-size: 36px
+}
+
 
 .pinIcon {
   @apply w-6 rotate-45;
