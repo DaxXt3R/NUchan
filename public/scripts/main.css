@@ -10,10 +10,32 @@
   font-size: 36px
 }
 
-
 .pinIcon {
   @apply w-6 rotate-45;
 }
 .pinIcon.pinned {
   @apply w-6 rotate-0;
+}
+
+.sidebarCollapsed#gridContainer{
+  grid-template-columns: 80px 1fr;
+  /* transition: .1s; */
+}
+#boardContainer{
+  scrollbar-width: none;
+}
+
+#gridContainer{
+  grid-template-columns: 320px 1fr;
+  /* transition: .1s; */
+}
+
+.sidebarCollapsed#sidebar h6{
+  display: none;
+}
+.sidebarCollapsed#sidebar img{
+  display: none;
+}
+.sidebarCollapsed a{
+  margin: auto;
 }
