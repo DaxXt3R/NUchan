@@ -60,9 +60,9 @@ app.get("/", (req, res) => {
   res.render('home.ejs', {boardList:boardListJSON.data})
 });
 app.get("/hot", (req, res) => {
-  res.render("hot.ejs");
+  res.render("hot.ejs", {boardList:boardListJSON.data});
 });
 app.get("/settings", (req, res) => {
-  res.render("settings.ejs");
+  res.render("settings.ejs", {boardList:boardListJSON.data});
 });
 

@@ -1,6 +1,7 @@
 /* READY */
 document.addEventListener("DOMContentLoaded", function () {
   updateSideBar();
+  updateBoardlist()
 })
 
 let sidebarCollapsed=localStorage.getItem("sidebarCollapsed")==="true"
@@ -28,37 +29,93 @@ function updateSideBar() {
 }
 
 
-async function initializeSidebar() {
-  console.log(boardList);
-  for (let i of boardList.boards) {
-    // create the anchor tag container for everything
+let userBoardlist=JSON.parse(localStorage.getItem("userBoardlist")) || [];
+// set boardList on first page load
+if (!localStorage.getItem("userBoardlist")){localStorage.setItem("userBoardlist", JSON.stringify([]))}
+function updateBoardlist(){
+  document.getElementById("boardContainer").innerHTML=""; //we're rebuilding the list on every click
+
+  // ---------------- PINNED BOARDS  ----------------
+  for (let i of userBoardlist){
+    const boardContainer=document.createElement("li")
+    boardContainer.classList.add("flex", "pinned");
+    
     const aTag = document.createElement("a");
     aTag.classList.add("sidebar-button");
-    // add board letter
+    
+    const boardLetter = document.createElement("h4");
+    boardLetter.innerHTML = "/" + i.board + "/";
+    aTag.append(boardLetter)
+    boardContainer.append(aTag)
+    
+    const boardName = document.createElement("h6");
+    boardName.innerHTML = "- "+i.title;
+    boardName.classList.add("truncate", "grow", 'pl-2');
+    aTag.append(boardName)
+
+    const pinIcon = document.createElement("img");
+    pinIcon.classList.add("pinIcon", "pinned", "cursor-pointer");
+    pinIcon.src = "/img/pinRed.svg";
+    boardContainer.append(pinIcon);
+    pinIcon.addEventListener("click", ()=>{
+      pinBoard(pinIcon)
+      userBoardlist=userBoardlist.filter(obj=>obj!==i)
+      localStorage.setItem("userBoardlist", JSON.stringify(userBoardlist))
+      if (!boardList.boards.includes(i)){boardList.boards.push(i)}
+      updateBoardlist()
+    })
+    document.getElementById("boardContainer").append(boardContainer);
+    aTag.href="/boards/"+i.board
+
+  }
+  
+  // ---------------- LEFTOVER BOARDS ----------------
+  for (let i of boardList.boards) {
+
+    const li=document.createElement("li")
+    li.classList.add("flex");
+    
+    const aTag = document.createElement("a");
+    aTag.classList.add("sidebar-button");
+    
     const boardLetter = document.createElement("h4");
     boardLetter.innerHTML = "/" + i.board + "/";
     aTag.append(boardLetter);
-    // add board full name
-    const boardName = document.createElement("h6");
+    li.append(aTag)
+    
+    const boardName = document.createElement("h6");     // add board full name
     boardName.innerHTML = "- "+i.title;
-    boardName.classList.add("truncate", "flex-grow", 'pl-2');
+    boardName.classList.add("truncate", "grow", 'pl-2');
     aTag.append(boardName);
-    // add pin icon
+       
+    // pin icon
     const pinIcon = document.createElement("img");
-    pinIcon.classList.add("pinIcon");
+    pinIcon.classList.add("pinIcon","cursor-pointer");
     pinIcon.src = "/img/pin.svg";
-    aTag.append(pinIcon);
-    pinIcon.addEventListener("click", function () {
-      pinIcon.parentElement.classList.toggle("pinned");
-      pinIcon.classList.toggle("pinned");
-      e.stopPropagation();
-      e.preventDefault();
-    });
+    li.append(pinIcon);
+    // pin icon funtionality
+    pinIcon.addEventListener("click", ()=>{
+      pinBoard(pinIcon)
+      // if clicked board is in userBoardlist, remove it and if it is not there add it
+      boardList.boards=boardList.boards.filter(obj=>obj!==i)
+      userBoardlist.push(i)
+      localStorage.setItem("userBoardlist", JSON.stringify(userBoardlist))
+      updateBoardlist()
+    })
     // add href
     aTag.href="/boards/"+i.board
-
-    document.getElementById("boardContainer").append(aTag);
+    document.getElementById("boardContainer").append(li);
   }
+  
+  console.log("userBoard =",userBoardlist)
+  console.log("boardList =",boardList.boards)
 }
-initializeSidebar();
+
+
+function pinBoard(obj){
+  obj.parentElement.classList.toggle("pinned");
+  obj.classList.toggle("pinned");
+}
+
+
 

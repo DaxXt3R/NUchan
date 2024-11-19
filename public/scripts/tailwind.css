@@ -1784,10 +1784,6 @@ html {
   max-width: 900px;
 }
 
-.flex-grow {
-  flex-grow: 1;
-}
-
 .grow {
   flex-grow: 1;
 }
@@ -1805,18 +1801,6 @@ html {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-
-.grid-cols-\[260px_1fr\] {
-  grid-template-columns: 260px 1fr;
-}
-
-.grid-cols-\[320px_1fr\] {
-  grid-template-columns: 320px 1fr;
-}
-
-.grid-rows-\[60px_auto\] {
-  grid-template-rows: 60px auto;
 }
 
 .grid-rows-\[auto_auto\] {
@@ -1869,12 +1853,6 @@ html {
 
 .overflow-x-hidden {
   overflow-x: hidden;
-}
-
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .text-balance {
@@ -2097,6 +2075,7 @@ html {
 
 .sidebar-button {
   display: flex;
+  flex-grow: 1;
   align-items: center;
   gap: 0.25rem;
   padding: 0.25rem;
