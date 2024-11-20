@@ -52,7 +52,8 @@ function updateBoardlist(){
     boardName.innerHTML = "- "+i.title;
     boardName.classList.add("truncate", "grow", 'pl-2');
     aTag.append(boardName)
-
+    
+    // pin icon
     const pinIcon = document.createElement("img");
     pinIcon.classList.add("pinIcon", "pinned", "cursor-pointer");
     pinIcon.src = "/img/pinRed.svg";
@@ -107,8 +108,8 @@ function updateBoardlist(){
     document.getElementById("boardContainer").append(li);
   }
   
-  console.log("userBoard =",userBoardlist)
-  console.log("boardList =",boardList.boards)
+  // console.log("userBoard =",userBoardlist)
+  // console.log("boardList =",boardList.boards)
 }
 
 

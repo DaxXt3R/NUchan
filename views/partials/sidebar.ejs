@@ -1,5 +1,5 @@
-<aside id="sidebar" class="bg-[#FFCCAA] col-span-1 row-span-1 font-spline overflow-auto">
-    <ul class="flex flex-col h-full gap-3 p-4 text-lg text-black">
+<aside id="sidebar" class="col-span-1 row-span-1 overflow-auto bg-theme-bgPrimary font-spline">
+    <ul class="flex flex-col h-full gap-3 p-4 text-lg text-theme-textPrimary">
         
         <a href="/" class="sidebar-button ">
             <span style="font-variation-settings: 'FILL' 1; font-size: 36px;" class="material-symbols-rounded">home</span>
@@ -37,7 +37,7 @@
         <!-- -------------------- BOARD LIST -------------------- -->
         <hr class="w-full my-1 border-t-2 border-black rounded-full">
 
-        <input type="text" placeholder="Search" class="bg-white rounded-lg input h-11">
+        <input type="text" placeholder="Search" class="border-2 rounded-lg bg-theme-bgPrimary border-theme-textPrimary input h-11">
         
         <ul id="boardContainer" class="flex flex-col text-[inherit] gap-[inherit] overflow-y-auto overflow-x-hidden">
             
@@ -50,5 +50,4 @@
 <script>
     // the second boardList is sent from the server, we save it in the first one so we can use it client-side
     const boardList = <%- JSON.stringify(boardList) %>
-    // console.log(boardList)
 </script>

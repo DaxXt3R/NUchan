@@ -1,37 +1,87 @@
 <!DOCTYPE html >
-<html lang="en" data-theme="dark" class="bg-white">
-
+<html lang="en" class="">
+    
 <!-- -------------------- HEAD -------------------- -->
 <%- include("partials/head.ejs") %>
 <head>
+    <script defer type="module" src="/scripts/settings.js"></script>
     <title>NUchan</title>
 </head>
 
 <body>
-	<div id="gridContainer" class="grid grid-rows-[auto_auto] h-screen">
+	<div id="gridContainer" class="grid grid-rows-[auto_auto] h-screen theme-blue">
         <!-- -------------------- HEADER -------------------- -->
         <%- include("partials/header") %>
         <!-- -------------------- SIDEBAR -------------------- -->
         <%- include("partials/sidebar") %>
         <!-- -------------------- MAIN CONTENT -------------------- -->
-        <main id="mainContent" class=" col-span-1 bg-[#FFFFEE] text-black">
+        <main id="mainContent" class="col-span-1 bg-theme-bg content-center">
             
-            <div class="flex justify-center align-middle h-full">
-                <h1 class="text-9xl">SETTINGS PAGE</h1>
-            </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            <div class="h-fit flex align-middle m-auto flex-wrap max-w-[600px] text-theme-textPrimary gap-2">
+                
+                
+                <div class="bg-theme-postPrimary collapse collapse-arrow shadow-lg ">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <h2 class="text-xl font-medium collapse-title bg-theme-bgPrimary transition-none">
+                        Themes</h2>
+                    
+                    
+                    <ul class="flex flex-col content-between justify-between gap-2 text-base px-14 collapse-content">
+                        <li class="justify-between join pt-8">
+                            <span>Dark mode</span>
+                            <input id="darkModeBtn" type="checkbox" class="border-2 border-theme-textPrimary checkbox">
+                        </li>
+                        <li class="flex items-center justify-between join join-horizontal">
+                            <span class="">Color theme</span>
+                            <select id="themeSelector" class="select justify-self-end bg-inherit">
+                                <option selected value="auto">board specific</option>
+                                <option value="red">red</option>
+                                <option value="blue">blue</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-theme-postPrimary collapse collapse-arrow shadow-lg ">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <h2 class="text-xl font-medium collapse-title bg-theme-bgPrimary transition-none">
+                        Quotes & Replying</h2>
+                    
+                    
+                    <ul class="flex flex-col content-between justify-between gap-2 text-base px-14 collapse-content">
+                        <li class="justify-between join pt-8">
+                            Still working on this LUL
+                        </li>
+                        <li class="flex items-center justify-between join join-horizontal">
+
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-theme-postPrimary collapse collapse-arrow shadow-lg ">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <h2 class="text-xl font-medium collapse-title bg-theme-bgPrimary transition-none">
+                        Monitoring</h2>
+                    
+                    
+                    <ul class="flex flex-col content-between justify-between gap-2 text-base px-14 collapse-content">
+                        <li class="justify-between join pt-8">
+                            Still working on this LUL
+                        </li>
+                        <li class="flex items-center justify-between join join-horizontal">
+
+                        </li>
+                    </ul>
+                </div>
+                
+                
+                
+
+           </div>
+            
+   
         </main>
     </div>
+    
 </body>
 </html>
