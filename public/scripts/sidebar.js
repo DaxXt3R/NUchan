@@ -1,13 +1,15 @@
 /* READY */
 document.addEventListener("DOMContentLoaded", function () {
   updateSideBar();
-  updateBoardlist()
+  updateBoardlist();
+  boldenLocation();
 })
 
 let sidebarCollapsed=localStorage.getItem("sidebarCollapsed")==="true"
+const sidebar=document.getElementById("sidebar")
 
 document.getElementById('expandSide').addEventListener("click", function () {
-  document.getElementById("sidebar").classList.toggle("sidebarCollapsed")
+  sidebar.classList.toggle("sidebarCollapsed")
   document.getElementById("gridContainer").classList.toggle("sidebarCollapsed")
   let currentState=localStorage.getItem("sidebarCollapsed")==="true" //this retarded function returns a string, so we check if it is "true" to turn it into a boolean check
   localStorage.setItem("sidebarCollapsed", !currentState)
@@ -16,7 +18,6 @@ document.getElementById('expandSide').addEventListener("click", function () {
 
 function updateSideBar() {
   let currentState=localStorage.getItem("sidebarCollapsed")==="true" //this retarded function returns a string, so we check if it is "true" to turn it into a boolean check
-  let sidebar=document.getElementById("sidebar")
   let grid=document.getElementById("gridContainer")
 
   if (sidebarCollapsed){
@@ -32,7 +33,7 @@ function updateSideBar() {
 let userBoardlist=JSON.parse(localStorage.getItem("userBoardlist")) || [];
 // set boardList on first page load
 if (!localStorage.getItem("userBoardlist")){localStorage.setItem("userBoardlist", JSON.stringify([]))}
-function updateBoardlist(){
+function updateBoardlist(){ //makes the boardList buttons
   document.getElementById("boardContainer").innerHTML=""; //we're rebuilding the list on every click
 
   // ---------------- PINNED BOARDS  ----------------
@@ -112,11 +113,30 @@ function updateBoardlist(){
   // console.log("boardList =",boardList.boards)
 }
 
-
 function pinBoard(obj){
   obj.parentElement.classList.toggle("pinned");
   obj.classList.toggle("pinned");
 }
 
-
-
+function boldenLocation() {  //make the currently selected page button bold
+  const aTags=sidebar.getElementsByTagName("a")
+  const path=window.location.pathname
+  console.log(path)
+  for (let tag of aTags){
+    switch(path){
+      case "/":
+      case "/hot":
+      case "/settings":
+        if (tag.href===window.location.href){ 
+          tag.classList.add("font-bold");
+          tag.style.fontVariationSettings="'FILL' 1";
+        };  break;
+      default:
+        if (path.includes("/boards")  && (tag.href===window.location.href) ){
+          tag.classList.add("font-bold");
+          tag.style.fontVariationSettings="'FILL' 1";
+        }
+        break;
+    }
+  }
+}

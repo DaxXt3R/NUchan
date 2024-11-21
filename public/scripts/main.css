@@ -23,86 +23,86 @@
 
     --color-hover: #FFFFEE;
   }
+}
 
-  .theme-red{
-    --color-bg:           #FFFFEE;
-    --color-bg-primary:   #FFCCAA;
-    --color-bg-second:    #FFFFFF;
-    --color-bg-accent:    #880000;
-    
-    --color-post-primary: #F0E0D6;
-    --color-post-second:  #D4C1B5;
+.theme-red{
+  --color-bg:           #FFFFEE;
+  --color-bg-primary:   #FFCCAA;
+  --color-bg-second:    #FFFFFF;
+  --color-bg-accent:    #880000;
+  
+  --color-post-primary: #F0E0D6;
+  --color-post-second:  #D4C1B5;
 
-    --color-text-primary: #000000;
-    --color-text-inverted:#FFFFFF;
-    --color-text-second:  #393939;
-    --color-text-muted:   #696969;
-    --color-text-accent:  #880000;
-    --color-text-link:    #0000EE;
-    --color-text-green:   #117743;
+  --color-text-primary: #000000;
+  --color-text-inverted:#FFFFFF;
+  --color-text-second:  #393939;
+  --color-text-muted:   #696969;
+  --color-text-accent:  #880000;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
 
-    --color-hover:        #FFFFEE;
-  }
+  --color-hover:        #FFFFEE;
+}
 
-  .theme-blue{
-    --color-bg:           #EFF2FF;
-    --color-bg-primary:   #8C95CB;
-    --color-bg-second:    #FFFFFF;
-    --color-bg-accent:    #434281;
-    
-    --color-post-primary: #D7DAEF;
-    --color-post-second:  #B5B9DA;
+.theme-blue{
+  --color-bg:           #EFF2FF;
+  --color-bg-primary:   #8C95CB;
+  --color-bg-second:    #FFFFFF;
+  --color-bg-accent:    #434281;
+  
+  --color-post-primary: #D7DAEF;
+  --color-post-second:  #B5B9DA;
 
-    --color-text-primary: #000000;
-    --color-text-inverted:#FFFFFF;
-    --color-text-second:  #393939;
-    --color-text-muted:   #8C8D98;
-    --color-text-accent:  #434281;
-    --color-text-link:    #0000EE;
-    --color-text-green:   #117743;
+  --color-text-primary: #000000;
+  --color-text-inverted:#FFFFFF;
+  --color-text-second:  #393939;
+  --color-text-muted:   #8C8D98;
+  --color-text-accent:  #434281;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
 
-    --color-hover:        #FFFFEE
-  }
+  --color-hover:        #FFFFEE;
+}
 
-  .theme-red-dark{
-    --color-bg:           #EFF2FF;
-    --color-bg-primary:   #8C95CB;
-    --color-bg-second:    #FFFFFF;
-    --color-bg-accent:    #434281;
-    
-    --color-post-primary: #D7DAEF;
-    --color-post-second:  #B5B9DA;
+.theme-red-dark{
+  --color-bg:           #46443C;
+  --color-bg-primary:   #342E2B;
+  --color-bg-second:    #FFFFFF;
+  --color-bg-accent:    #880000;
+  
+  --color-post-primary: #39352E;
+  --color-post-second:  #2B2823;
 
-    --color-text-primary: #000000;
-    --color-text-inverted:#FFFFFF;
-    --color-text-second:  #393939;
-    --color-text-muted:   #8C8D98;
-    --color-text-accent:  #434281;
-    --color-text-link:    #0000EE;
-    --color-text-green:   #117743;
+  --color-text-primary: #d3d3d3;
+  --color-text-inverted:#000000;
+  --color-text-second:  #8E8E8E;
+  --color-text-muted:   #535353;
+  --color-text-accent:  #880000;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
 
-    --color-hover:        #FFFFEE
-  }
+  --color-hover:        #FFFFEE;
+}
 
-  .theme-blue-dark{
-    --color-bg:           #333749;
-    --color-bg-primary:   #252731;
-    --color-bg-second:    #3B3E4B;
-    --color-bg-accent:    #434281;
-    
-    --color-post-primary: #252731;
-    --color-post-second:  #1C1C24;
+.theme-blue-dark{
+  --color-bg:           #333749;
+  --color-bg-primary:   #252731;
+  --color-bg-second:    #3B3E4B;
+  --color-bg-accent:    #434281;
+  
+  --color-post-primary: #2D2F41;
+  --color-post-second:  #1C1C24;
 
-    --color-text-primary: #FFFFFF;
-    --color-text-inverted:#000000;
-    --color-text-second:  #8E8E8E;
-    --color-text-muted:   #535353;
-    --color-text-accent:  #434281;
-    --color-text-link:    #0000EE;
-    --color-text-green:   #117743;
+  --color-text-primary: #d3d3d3;
+  --color-text-inverted:#000000;
+  --color-text-second:  #8E8E8E;
+  --color-text-muted:   #535353;
+  --color-text-accent:  #434281;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
 
-    --color-hover:        #FFFFEE
-  }
+  --color-hover:        #FFFFEE;
 }
 
 
@@ -142,5 +142,5 @@
   display: none;
 }
 .sidebarCollapsed a{
-  margin: auto;
+  justify-content: center;
 }

@@ -808,42 +808,6 @@ html {
   --color-hover: #FFFFEE;
 }
 
-.theme-blue{
-  --color-bg:           #EFF2FF;
-  --color-bg-primary:   #8C95CB;
-  --color-bg-second:    #FFFFFF;
-  --color-bg-accent:    #434281;
-  --color-post-primary: #D7DAEF;
-  --color-post-second:  #B5B9DA;
-  --color-text-primary: #000000;
-  --color-text-inverted:#FFFFFF;
-  --color-text-second:  #393939;
-  --color-text-muted:   #8C8D98;
-  --color-text-accent:  #434281;
-  --color-text-link:    #0000EE;
-  --color-text-green:   #117743;
-  --color-hover:        #FFFFEE
-  
-}
-
-.theme-blue-dark{
-  --color-bg:           #333749;
-  --color-bg-primary:   #252731;
-  --color-bg-second:    #3B3E4B;
-  --color-bg-accent:    #434281;
-  --color-post-primary: #252731;
-  --color-post-second:  #1C1C24;
-  --color-text-primary: #FFFFFF;
-  --color-text-inverted:#000000;
-  --color-text-second:  #8E8E8E;
-  --color-text-muted:   #535353;
-  --color-text-accent:  #434281;
-  --color-text-link:    #0000EE;
-  --color-text-green:   #117743;
-  --color-hover:        #FFFFEE
-  
-}
-
 .avatar.placeholder > div {
   display: flex;
   align-items: center;
@@ -851,6 +815,11 @@ html {
 }
 
 @media (hover:hover) {
+  .label a:hover {
+    --tw-text-opacity: 1;
+    color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+  }
+
   .menu li > *:not(ul, .menu-title, details, .btn):active,
 .menu li > *:not(ul, .menu-title, details, .btn).active,
 .menu li > details > summary:active {
@@ -1163,6 +1132,19 @@ html {
   }
 }
 
+.label {
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .input {
   flex-shrink: 1;
   -webkit-appearance: none;
@@ -1398,6 +1380,11 @@ html {
 .swap-active .swap-on,
 .swap input:indeterminate ~ .swap-indeterminate {
   opacity: 1;
+}
+
+.btm-nav > * .label {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1800,6 +1787,10 @@ details.collapse summary::-webkit-details-marker {
 
 .input[list]::-webkit-calendar-picker-indicator {
   line-height: 1em;
+}
+
+.input-bordered {
+  border-color: var(--fallback-bc,oklch(var(--bc)/0.2));
 }
 
 .input:focus,
@@ -2284,10 +2275,6 @@ details.collapse summary::-webkit-details-marker {
   height: 2.25rem;
 }
 
-.h-11 {
-  height: 2.75rem;
-}
-
 .h-9 {
   height: 2.25rem;
 }
@@ -2409,10 +2396,6 @@ details.collapse summary::-webkit-details-marker {
   gap: inherit;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .justify-self-end {
   justify-self: end;
 }
@@ -2470,16 +2453,17 @@ details.collapse summary::-webkit-details-marker {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.border-theme-textInverted {
-  border-color: var(--color-text-inverted);
+.border-theme-bgAccent {
+  border-color: var(--color-bg-accent);
 }
 
 .border-theme-textPrimary {
   border-color: var(--color-text-primary);
 }
 
-.border-theme-bgAccent {
-  border-color: var(--color-bg-accent);
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-\[\#FFFFEE\] {
@@ -2503,16 +2487,8 @@ details.collapse summary::-webkit-details-marker {
   background-color: var(--color-bg-primary);
 }
 
-.bg-theme-bgSecond {
-  background-color: var(--color-bg-second);
-}
-
 .bg-theme-postPrimary {
   background-color: var(--color-post-primary);
-}
-
-.bg-theme-textInverted {
-  background-color: var(--color-text-inverted);
 }
 
 .bg-transparent {
@@ -2572,14 +2548,6 @@ details.collapse summary::-webkit-details-marker {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
-}
-
-.pt-4 {
-  padding-top: 1rem;
 }
 
 .pt-8 {
@@ -2656,10 +2624,6 @@ details.collapse summary::-webkit-details-marker {
   color: var(--color-text-accent);
 }
 
-.text-theme-textInverted {
-  color: var(--color-text-inverted);
-}
-
 .text-theme-textMuted {
   color: var(--color-text-muted);
 }
@@ -2675,10 +2639,6 @@ details.collapse summary::-webkit-details-marker {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-theme-bgSecond {
-  color: var(--color-bg-second);
 }
 
 .opacity-25 {
@@ -2708,6 +2668,74 @@ details.collapse summary::-webkit-details-marker {
 
 .transition-none {
   transition-property: none;
+}
+
+.theme-red{
+  --color-bg:           #FFFFEE;
+  --color-bg-primary:   #FFCCAA;
+  --color-bg-second:    #FFFFFF;
+  --color-bg-accent:    #880000;
+  --color-post-primary: #F0E0D6;
+  --color-post-second:  #D4C1B5;
+  --color-text-primary: #000000;
+  --color-text-inverted:#FFFFFF;
+  --color-text-second:  #393939;
+  --color-text-muted:   #696969;
+  --color-text-accent:  #880000;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
+  --color-hover:        #FFFFEE;
+}
+
+.theme-blue{
+  --color-bg:           #EFF2FF;
+  --color-bg-primary:   #8C95CB;
+  --color-bg-second:    #FFFFFF;
+  --color-bg-accent:    #434281;
+  --color-post-primary: #D7DAEF;
+  --color-post-second:  #B5B9DA;
+  --color-text-primary: #000000;
+  --color-text-inverted:#FFFFFF;
+  --color-text-second:  #393939;
+  --color-text-muted:   #8C8D98;
+  --color-text-accent:  #434281;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
+  --color-hover:        #FFFFEE;
+}
+
+.theme-red-dark{
+  --color-bg:           #46443C;
+  --color-bg-primary:   #342E2B;
+  --color-bg-second:    #FFFFFF;
+  --color-bg-accent:    #880000;
+  --color-post-primary: #39352E;
+  --color-post-second:  #2B2823;
+  --color-text-primary: #d3d3d3;
+  --color-text-inverted:#000000;
+  --color-text-second:  #8E8E8E;
+  --color-text-muted:   #535353;
+  --color-text-accent:  #880000;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
+  --color-hover:        #FFFFEE;
+}
+
+.theme-blue-dark{
+  --color-bg:           #333749;
+  --color-bg-primary:   #252731;
+  --color-bg-second:    #3B3E4B;
+  --color-bg-accent:    #434281;
+  --color-post-primary: #2D2F41;
+  --color-post-second:  #1C1C24;
+  --color-text-primary: #d3d3d3;
+  --color-text-inverted:#000000;
+  --color-text-second:  #8E8E8E;
+  --color-text-muted:   #535353;
+  --color-text-accent:  #434281;
+  --color-text-link:    #0000EE;
+  --color-text-green:   #117743;
+  --color-hover:        #FFFFEE;
 }
 
 /* this is how you make your own classes with tailwind, everything after @apply gets substituted for the class name */
@@ -2765,5 +2793,5 @@ details.collapse summary::-webkit-details-marker {
 }
 
 .sidebarCollapsed a{
-  margin: auto;
+  justify-content: center;
 }

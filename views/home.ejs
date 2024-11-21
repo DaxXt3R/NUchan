@@ -9,7 +9,7 @@
 
 
 <body>
-	<div id="gridContainer" class="grid grid-rows-[auto_auto] h-screen theme-blue-dark">
+	<div id="gridContainer" class="grid grid-rows-[auto_auto] h-screen">
         <!-- -------------------- HEADER -------------------- -->
         <%- include("partials/header") %>
         <!-- -------------------- SIDEBAR -------------------- -->
@@ -23,25 +23,25 @@
                 style="-webkit-text-stroke: 4px #4A4A4A; ">NUchan</h1>
             </section>
         
-            <section class="flex flex-col h-auto w-full max-w-[900px] mt-20 border-2 border-black">
+            <section class="flex flex-col h-auto w-full max-w-[900px] mt-20 border-2 border-theme-bgAccent">
                 <div class="flex flex-row p-2 text-white bg-theme-bgAccent">
                     <h3 class="text-2xl font-bold grow">What is NUchan?</h3>
                     <button class="text-white border-2 rounded-none btn btn-sm btn-square btn-outline">
                         <span class="material-symbols-rounded">close</span></button>
                 </div>
-                <div class="p-2 text-lg bg-white text-balance">
+                <div class="p-2 text-lg bg-theme-postPrimary text-balance text-theme-textPrimary">
                     <p>NUchan is a visual update to 4chan that adds a whole lot of new features... Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia molestiae voluptatum excepturi fuga sit, quae esse? Optio in, perspiciatis dicta ducimus corrupti commodi distinctio soluta accusantium odio minima repellendus, nemo accusamus modi fugit suscipit consectetur doloremque magnam placeat quia mollitia quae eos facere rem? Est, omnis. Nisi, nihil corrupti.</p>
                 </div>
             </section>
 
-            <section id="boardsWindow" class="flex flex-col min-h-72 h-auto w-full max-w-[900px] mt-5 border-2 border-theme-bgAccent bg-theme-bgSecond">
+            <section id="boardsWindow" class="flex flex-col min-h-72 h-auto w-full max-w-[900px] mt-5 border-2 border-theme-bgAccent">
                 <div class="flex flex-row p-2 text-theme-textAccent bg-theme-bgPrimary">
                     <h3 class="text-2xl font-bold grow">Boards</h3>
                     <button class="border-[3px] rounded-none text-inherit btn btn-sm btn-square btn-outline">
                         <span class="material-symbols-rounded">close</span></button>
                 </div>
                 
-                <div class="flex flex-col">
+                <div class="flex flex-col grow bg-theme-postPrimary">
 
                 </div>
             </section>

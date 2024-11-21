@@ -1,12 +1,12 @@
-<aside id="sidebar" class="col-span-1 row-span-1 overflow-auto bg-theme-bgPrimary font-spline">
+<aside id="sidebar" class="col-span-1 row-span-1 overflow-y-auto overflow-x-hidden bg-theme-bgPrimary font-spline">
     <ul class="flex flex-col h-full gap-3 p-4 text-lg text-theme-textPrimary">
         
-        <a href="/" class="sidebar-button ">
-            <span style="font-variation-settings: 'FILL' 1; font-size: 36px;" class="material-symbols-rounded">home</span>
+        <a href="/" class="sidebar-button" >
+            <span style="font-size: 36px;" class="material-symbols-rounded">home</span>
             <h6>Home</h6>
         </a>
         <a href="/hot" class="sidebar-button">
-            <span class="fill-current material-symbols-outlined">local_fire_department</span>
+            <span class="material-symbols-rounded">local_fire_department</span>
             <h6>Hot</h6>
         </a>
         
@@ -37,8 +37,11 @@
         <!-- -------------------- BOARD LIST -------------------- -->
         <hr class="w-full my-1 border-t-2 border-black rounded-full">
 
-        <input type="text" placeholder="Search" class="border-2 rounded-lg bg-theme-bgPrimary border-theme-textPrimary input h-11">
-        
+        <!-- <input type="text" placeholder="Search" class="border-2 rounded-lg bg-theme-bgPrimary border-theme-textPrimary input"> -->
+        <label class="input input-bordered flex items-center gap-2 h-9">
+            <input type="text" class="grow" placeholder="Search" />
+        </label>
+
         <ul id="boardContainer" class="flex flex-col text-[inherit] gap-[inherit] overflow-y-auto overflow-x-hidden">
             
             
