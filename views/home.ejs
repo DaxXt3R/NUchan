@@ -4,6 +4,7 @@
 <!-- -------------------- HEAD -------------------- -->
 <%- include("partials/head.ejs") %>
 <head>
+    <script defer type="module" src="/scripts/home.js"></script>
     <title>NUchan</title>
 </head>
 
@@ -34,14 +35,21 @@
                 </div>
             </section>
 
-            <section id="boardsWindow" class="flex flex-col min-h-72 h-auto w-full max-w-[900px] mt-5 border-2 border-theme-bgAccent">
+            <section id="boardsWindow" class="flex flex-col w-full max-w-[900px] mt-5 border-2 border-theme-bgAccent">
                 <div class="flex flex-row p-2 text-theme-textAccent bg-theme-bgPrimary">
                     <h3 class="text-2xl font-bold grow">Boards</h3>
-                    <button class="border-[3px] rounded-none text-inherit btn btn-sm btn-square btn-outline">
-                        <span class="material-symbols-rounded">close</span></button>
+                    
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn m-1 btn-ghost">Click</div>
+                        <ul tabindex="0" class="dropdown-content menu bg-theme-postPrimary z-[1] w-52 shadow border-2 border-theme-bgAccent">
+                          <li><a>Item 1</a></li>
+                          <li><a>Item 2</a></li>
+                        </ul>
+                    </div>
+
                 </div>
                 
-                <div class="flex flex-col grow bg-theme-postPrimary">
+                <div id="boardsWindowList" class="flex flex-col grow bg-theme-postPrimary p-2 flex-wrap h-[520px] content-evenly gap-4">
 
                 </div>
             </section>

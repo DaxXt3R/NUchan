@@ -5,7 +5,7 @@ let isDarkMode=localStorage.getItem("darkMode")
 let colorTheme=localStorage.getItem("colorTheme")
 const grid=document.getElementById("gridContainer")
 
-console.log(isDarkMode,colorTheme)
+// console.log(isDarkMode,colorTheme)
 initTheme()
 function initTheme() {
     grid.classList.remove("theme-red", "theme-blue", "theme-red-dark", "theme-blue-dark")
