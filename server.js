@@ -49,6 +49,7 @@ async function getBoardList() {
 }
 getBoardList()
 setInterval(getBoardList,60*60*1000)  /* 60 minutes * 60 seconds * 1000 miliseconds, 1second=1000miliseconds */
+
 module.exports={getBoardListJSON:()=>boardListJSON}
 
 
@@ -66,3 +67,6 @@ app.get("/settings", (req, res) => {
   res.render("settings.ejs", {boardList:boardListJSON.data});
 });
 
+app.get("/test", (req, res) => {
+  res.render("test.ejs", {boardList:boardListJSON.data});
+});

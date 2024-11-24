@@ -1,5 +1,6 @@
 <!DOCTYPE html >
 <html lang="en" data-theme="dark" class="bg-white">
+<script defer type="module" src="/scripts/board.js"></script>
 
 <!-- -------------------- HEAD -------------------- -->
 <%- include("partials/head.ejs") %>
@@ -14,9 +15,56 @@
         <!-- -------------------- SIDEBAR -------------------- -->
         <%- include("partials/sidebar") %>
         <!-- -------------------- MAIN CONTENT -------------------- -->
-        <main id="mainContent" class="p-10 items-center flex flex-col overflow-auto col-span-1 bg-[#FFFFEE] text-black">
-            <h1 class="text-9xl">/<%= currentBoard %>/ - </h1>
-            <h2 class="text-2xl break-all w-fit"><%= JSON.stringify(data) %></h2>
+        <main id="mainContent" class="flex flex-col items-center col-span-2 xl:col-span-1 overflow-auto overflow-x-hidden text-theme-textPrimary bg-theme-bg">
+            <span class="w-full">
+                <img src="" alt="" id="4chanAd" class="max-h-[150px]">
+                <h1 class="text-5xl font-semibold text-center">/<%= currentBoard %>/ - </h1>
+            </span>
+
+
+            <!-- -------------------- BLOTTER -------------------- -->
+            <span id="blotterSpan" class="w-full h-[130px] bg-theme-bgPrimary">
+                
+            </span>
+            <!-- -------------------- PAGE NAV -------------------- -->
+            <nav class="bg-theme-bgAccent text-white w-full rounded-none items-center justify-center flex mb-4">
+                
+                <div id="smPageNav" class="join xl:hidden">
+                    <a class="join-item btn btn-ghost  rounded-lg"><span class="material-symbols-rounded">keyboard_double_arrow_left</span></a>
+                    <a class="join-item btn btn-ghost rounded-lg">Page 1</a>
+                    <a class="join-item btn btn-ghost rounded-lg"><span class="material-symbols-rounded">keyboard_double_arrow_right</span></a>
+                </div>
+
+
+                <div class="join hidden xl:flex " id="xlPageNav ">
+                    <a class="join-item btn btn-ghost  rounded-lg">
+                        <span class="material-symbols-rounded">keyboard_double_arrow_left</span>
+                        Previous</a>
+                    <a class="join-item btn btn-ghost rounded-lg btn-active ">1</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">2</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">3</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">4</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">5</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">6</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">7</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">8</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">9</a>
+                    <a class="join-item btn btn-ghost  rounded-lg">10</a>
+                    <a class="join-item btn btn-ghost rounded-lg">
+                        Next<span class="material-symbols-rounded">keyboard_double_arrow_right</span>
+                        </a>
+                    
+                </div>
+                
+                
+            </nav>
+            
+
+
+
+            <%- include('partials/thread.ejs') %>
+
+
 
         </main>
 

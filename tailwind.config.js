@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*"],
+  mode: 'jit', // Enable JIT mode
+  content: ["./views/**/*", "./public/scripts/*"],
   theme: {
     extend: {
       fontFamily: { spline: ["Spline Sans", "sans-serif"] },

@@ -10,6 +10,8 @@ const sidebar=document.getElementById("sidebar")
 
 document.getElementById('expandSide').addEventListener("click", function () {
   sidebar.classList.toggle("sidebarCollapsed")
+  
+  
   document.getElementById("gridContainer").classList.toggle("sidebarCollapsed")
   let currentState=localStorage.getItem("sidebarCollapsed")==="true" //this retarded function returns a string, so we check if it is "true" to turn it into a boolean check
   localStorage.setItem("sidebarCollapsed", !currentState)

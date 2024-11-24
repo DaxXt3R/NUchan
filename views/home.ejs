@@ -1,5 +1,5 @@
 <!DOCTYPE html >
-<html lang="en" data-theme="dark" class="bg-white">
+<html lang="en" data-theme="dark" class="bg-white w-screen h-screen">
 
 <!-- -------------------- HEAD -------------------- -->
 <%- include("partials/head.ejs") %>
@@ -9,29 +9,28 @@
 </head>
 
 
-<body>
-	<div id="gridContainer" class="grid grid-rows-[auto_auto] h-screen">
+<body class="bg-black w-screen h-screen">
+	<div id="gridContainer" class="grid grid-rows-[52px_auto] auto-rows-min w-screen h-screen">
         <!-- -------------------- HEADER -------------------- -->
         <%- include("partials/header") %>
         <!-- -------------------- SIDEBAR -------------------- -->
         <%- include("partials/sidebar") %>
         <!-- -------------------- MAIN CONTENT -------------------- -->
-        <main id="mainContent" class="flex flex-col items-center col-span-1 p-10 overflow-auto text-black bg-theme-bg">
-            <section id="nuchanLogo" class="justify-center w-full h-[200px] flex">
-                <img class="h-full contrast-100 brightness-125 saturate-0" src="/img/4chan-Emblem.png" alt="">
+        <main id="mainContent" class="flex flex-col items-center col-span-2 xl:col-span-1 p-2 overflow-auto overflow-x-hidden text-black bg-theme-bg">
+            <section id="nuchanLogo" class="justify-center w-full h-[150px] flex lg:mt-10 mt-5">
+                <img class="h-[50px] lg:h-full antialiased" src="/img/logoBig.png" alt="">
                 
-                <h1 class="m-0 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-800 translate-x-[-50px] font-extrabold tracking-[-0.08em] text-[120px] font-spline" 
-                style="-webkit-text-stroke: 4px #4A4A4A; ">NUchan</h1>
+                
             </section>
         
-            <section class="flex flex-col h-auto w-full max-w-[900px] mt-20 border-2 border-theme-bgAccent">
+            <section class="flex flex-col h-auto w-full max-w-[900px] lg:mt-20 mt-5 border-2 border-theme-bgAccent">
                 <div class="flex flex-row p-2 text-white bg-theme-bgAccent">
                     <h3 class="text-2xl font-bold grow">What is NUchan?</h3>
                     <button class="text-white border-2 rounded-none btn btn-sm btn-square btn-outline">
                         <span class="material-symbols-rounded">close</span></button>
                 </div>
-                <div class="p-2 text-lg bg-theme-postPrimary text-balance text-theme-textPrimary">
-                    <p>NUchan is a visual update to 4chan that adds a whole lot of new features... Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia molestiae voluptatum excepturi fuga sit, quae esse? Optio in, perspiciatis dicta ducimus corrupti commodi distinctio soluta accusantium odio minima repellendus, nemo accusamus modi fugit suscipit consectetur doloremque magnam placeat quia mollitia quae eos facere rem? Est, omnis. Nisi, nihil corrupti.</p>
+                <div class="p-2 text-lg bg-theme-postPrimary text-theme-textPrimary">
+                    <p>NUchan is a visual update to 4chan that is going to add a whole lot new features. The website is still very much a work in progress, as a passion project of Диян Николов, the goal is to present 4chan in a visually prettier way than 2003 and add exciting new features, like infinite post saving, mobile support, multiple image uploads, color themes, user profiles (might be kinda dumb, since the point of 4chan is to be anonymous)</p>
                 </div>
             </section>
 
@@ -40,7 +39,7 @@
                     <h3 class="text-2xl font-bold grow">Boards</h3>
                     
                     <div class="dropdown dropdown-end">
-                        <div tabindex="0" role="button" class="btn m-1 btn-ghost">Click</div>
+                        <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">Filter</div>
                         <ul tabindex="0" class="dropdown-content menu bg-theme-postPrimary z-[1] w-52 shadow border-2 border-theme-bgAccent">
                           <li><a>Item 1</a></li>
                           <li><a>Item 2</a></li>
@@ -49,9 +48,7 @@
 
                 </div>
                 
-                <div id="boardsWindowList" class="flex flex-col grow bg-theme-postPrimary p-2 flex-wrap h-[520px] content-evenly gap-4">
-
-                </div>
+                <div id="boardsWindowList" class="flex flex-col grow bg-theme-postPrimary p-2 flex-wrap lg:h-[520px] content-evenly gap-4 text-theme-textPrimary"></div>
             </section>
         
         
