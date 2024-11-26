@@ -44,7 +44,6 @@
 
   --color-hover:        #FFFFEE;
 }
-
 .theme-blue{
   --color-bg:           #EFF2FF;
   --color-bg-primary:   #8C95CB;
@@ -64,7 +63,6 @@
 
   --color-hover:        #FFFFEE;
 }
-
 .theme-red-dark{
   --color-bg:           #46443C;
   --color-bg-primary:   #342E2B;
@@ -84,7 +82,6 @@
 
   --color-hover:        #FFFFEE;
 }
-
 .theme-blue-dark{
   --color-bg:           #333749;
   --color-bg-primary:   #252731;
@@ -116,6 +113,12 @@
 }
 
 
+.threadTitleCollapsed{
+  @apply hidden
+}
+.threadCollapsed{
+  @apply text-theme-textMuted
+}
 
 .pinIcon {
   @apply w-6 rotate-45;

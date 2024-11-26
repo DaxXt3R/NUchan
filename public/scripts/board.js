@@ -18,6 +18,10 @@ function initReplies(threadJSON) {
     
 }
 
+
+
+
+
 fetch("https://picsum.photos/400/400").then(res=>res.blob()).then(blob=>handler(blob))
 function handler(blob) {
     document.getElementById("4chanAd").src=URL.createObjectURL(blob)

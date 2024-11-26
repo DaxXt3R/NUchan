@@ -123,7 +123,6 @@ function pinBoard(obj){
 function boldenLocation() {  //make the currently selected page button bold
   const aTags=sidebar.getElementsByTagName("a")
   const path=window.location.pathname
-  console.log(path)
   for (let tag of aTags){
     switch(path){
       case "/":

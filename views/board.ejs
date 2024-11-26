@@ -1,6 +1,7 @@
 <!DOCTYPE html >
 <html lang="en" data-theme="dark" class="bg-white">
 <script defer type="module" src="/scripts/board.js"></script>
+<script defer type="module" src="/scripts/pageNav.js"></script>
 <script>    const chanPage= <%- JSON.stringify(chanPage) %>;    </script>
 <script>
     const currentBoard= <%- JSON.stringify(currentBoard) %>;
@@ -22,8 +23,8 @@
         <!-- -------------------- MAIN CONTENT -------------------- -->
         <main id="mainContent" class="flex flex-col items-center col-span-2 xl:col-span-1 overflow-auto overflow-x-hidden text-theme-textPrimary bg-theme-bg">
             <span class="w-full">
-                <img src="" alt="" id="4chanAd" class="max-h-[150px] size-24">
-                <h1 class="text-5xl font-semibold text-center">/<%= currentBoard.board %>/ - <%= currentBoard.title %></h1>
+                <img src="" alt="" id="4chanAd" class="max-h-[150px] size-24 m-auto my-5">
+                <h1 class="xl:text-5xl text-2xl font-bold text-center xl:my-9 my-3 text-theme-textAccent" style="filter: drop-shadow(3px 3px 3px rgb(0 0 0 / .3));">/<%= currentBoard.board %>/ - <%= currentBoard.title %></h1>
             </span>
 
 
@@ -42,7 +43,7 @@
 
 
                 <div class="hidden xl:flex items-center grow justify-between" id="xlPageNav ">
-                    <div>
+                    <div class="opacity-50">
                         <div class="tooltip z-auto" data-tip="Infinite Scroll">
                             <button class="btn btn-ghost material-symbols-rounded justify-self-start px-3" id="xlPageNavPrevious">all_inclusive</button>
                         </div >
@@ -55,21 +56,23 @@
                         <a class="join-item btn btn-ghost  rounded-lg">
                             <span class="material-symbols-rounded" id="xlPageNavPrevious">keyboard_double_arrow_left</span>
                             Previous</a>
-                        <a class="join-item btn btn-ghost rounded-lg btn-active ">1</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">2</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">3</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">4</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">5</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">6</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">7</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">8</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">9</a>
-                        <a class="join-item btn btn-ghost  rounded-lg">10</a>
+                            <div class="join" id="xlPages">
+                                <a class="join-item btn btn-ghost rounded-lg btn-active ">1</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">2</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">3</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">4</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">5</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">6</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">7</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">8</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">9</a>
+                                <a class="join-item btn btn-ghost  rounded-lg">10</a>
+                            </div>
                         <a class="join-item btn btn-ghost rounded-lg">
                             Next<span class="material-symbols-rounded" id="xlPageNavNext">keyboard_double_arrow_right</span>
                             </a>
                     </div>
-                    <div class="tooltip z-auto" data-tip="Archive">
+                    <div class="tooltip z-auto opacity-50" data-tip="Archive">
                         <button class="btn btn-ghost material-symbols-rounded justify-self-start px-3" id="xlPageNavPrevious">unarchive</button>
                     </div >
                     
