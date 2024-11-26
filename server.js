@@ -49,8 +49,7 @@ async function getBoardList() {
 }
 getBoardList()
 setInterval(getBoardList,60*60*1000)  /* 60 minutes * 60 seconds * 1000 miliseconds, 1second=1000miliseconds */
-
-module.exports={getBoardListJSON:()=>boardListJSON}
+module.exports.getBoardListJSON= ()=>boardListJSON  //variables that get updated have to be exported like this, a function that returns the variable, otherwise if you just export the variable it will get exported once as the initial value and never again
 
 
 // --------------------------- ROUTERS ---------------------------

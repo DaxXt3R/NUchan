@@ -1,3 +1,8 @@
+console.log(chanPage)
+console.log("current Board is ",currentBoard)
+
+
+
 function initBoard(boardJSON) {     //populates the board with threads of the given JSON
     
 }
@@ -13,7 +18,8 @@ function initReplies(threadJSON) {
     
 }
 
-
-function init4chanAd() {
-    
+fetch("https://picsum.photos/400/400").then(res=>res.blob()).then(blob=>handler(blob))
+function handler(blob) {
+    document.getElementById("4chanAd").src=URL.createObjectURL(blob)
 }
+
