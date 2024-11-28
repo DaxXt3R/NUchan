@@ -113,12 +113,6 @@
 }
 
 
-.threadTitleCollapsed{
-  @apply hidden
-}
-.threadCollapsed{
-  @apply text-theme-textMuted
-}
 
 .pinIcon {
   @apply w-6 rotate-45;

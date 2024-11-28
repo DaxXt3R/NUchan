@@ -5,7 +5,6 @@
 <script>    const chanPage= <%- JSON.stringify(chanPage) %>;    </script>
 <script>
     const currentBoard= <%- JSON.stringify(currentBoard) %>;
-    
 </script>
 
 <!-- -------------------- HEAD -------------------- -->
@@ -21,69 +20,84 @@
         <!-- -------------------- SIDEBAR -------------------- -->
         <%- include("partials/sidebar") %>
         <!-- -------------------- MAIN CONTENT -------------------- -->
-        <main id="mainContent" class="flex flex-col items-center col-span-2 xl:col-span-1 overflow-auto overflow-x-hidden text-theme-textPrimary bg-theme-bg">
-            <span class="w-full">
-                <img src="" alt="" id="4chanAd" class="max-h-[150px] size-24 m-auto my-5">
-                <h1 class="xl:text-5xl text-2xl font-bold text-center xl:my-9 my-3 text-theme-textAccent" style="filter: drop-shadow(3px 3px 3px rgb(0 0 0 / .3));">/<%= currentBoard.board %>/ - <%= currentBoard.title %></h1>
+        <main id="mainContent" class="flex flex-col items-center col-span-2 overflow-auto overflow-x-hidden xl:col-span-1 text-theme-textPrimary bg-theme-bg">
+            <span class="w-full bg-gradient-to-b from-[#FFCCAA]">
+                <img src="<%= boardTopAd %>" alt="" id="4chanAd" class="h-[128px] m-auto my-5 object-contain border-theme-textPrimary border-[1px]">
+                <h1 class="my-5 text-2xl font-bold text-center xl:text-5xl xl:my-14 text-theme-textAccent" style="filter: drop-shadow(3px 3px 3px rgb(0 0 0 / .3));">/<%= currentBoard.board %>/ - <%= currentBoard.title %></h1>
             </span>
 
 
             <!-- -------------------- BLOTTER -------------------- -->
-            <span id="blotterSpan" class="w-full h-[130px] bg-theme-bgPrimary">
-                
+            <span id="blotterSpan" class="flex flex-col justify-center w-full gap-8 p-4 bg-theme-bgPrimary xl:flex-row text-theme-textSecond">
+                <img src="<%= boardAd[1] %>" alt="" class="flex-1 max-h-[105px] object-contain bg-theme-postSecond max-w-[800px]">
+                <ul class="flex flex-col flex-1 max-w-[800px]" id="blotter">
+                    <li>
+                        <button class="font-bold">NUchan Blotter</button>
+                        <span class="mx-2">|</span>
+                        <button>4chan Blotter</button>
+                    </li>
+                    <hr class="my-[.5px] border-[1.5px] rounded border-theme-textSecond">
+                    <li class="truncate">01/01/2025 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, soluta?</li>
+                    <li class="truncate">01/01/2025 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, soluta?</li>
+                    <li class="truncate">01/01/2025 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, soluta?</li>
+                </ul>
             </span>
             <!-- -------------------- PAGE NAV -------------------- -->
-            <nav class="bg-theme-bgAccent text-white w-full rounded-none items-center justify-center flex mb-4">
+            <nav class="flex items-center justify-center w-full mb-4 text-white rounded-none bg-theme-bgAccent">
                 
                 <div id="smPageNav" class="join xl:hidden">
-                    <a class="join-item btn btn-ghost  rounded-lg"><span class="material-symbols-rounded">keyboard_double_arrow_left</span></a>
-                    <a class="join-item btn btn-ghost rounded-lg">Page 1</a>
-                    <a class="join-item btn btn-ghost rounded-lg"><span class="material-symbols-rounded">keyboard_double_arrow_right</span></a>
+                    <a class="rounded-lg join-item btn btn-ghost"><span class="material-symbols-rounded">keyboard_double_arrow_left</span></a>
+                    <a class="rounded-lg join-item btn btn-ghost">Page 1</a>
+                    <a class="rounded-lg join-item btn btn-ghost"><span class="material-symbols-rounded">keyboard_double_arrow_right</span></a>
                 </div>
 
 
-                <div class="hidden xl:flex items-center grow justify-between" id="xlPageNav ">
+                <div class="items-center justify-between hidden xl:flex grow" id="xlPageNav ">
                     <div class="opacity-50">
-                        <div class="tooltip z-auto" data-tip="Infinite Scroll">
-                            <button class="btn btn-ghost material-symbols-rounded justify-self-start px-3" id="xlPageNavPrevious">all_inclusive</button>
+                        <div class="tooltip" data-tip="Infinite Scroll">
+                            <button class="px-3 btn btn-ghost material-symbols-rounded justify-self-start" id="xlPageNavPrevious">all_inclusive</button>
                         </div >
-                        <div class="tooltip z-auto" data-tip="Catalogue View">
-                            <button class="btn btn-ghost material-symbols-rounded justify-self-start px-3" id="xlPageNavPrevious">view_module</button>
+                        <div class="z-auto tooltip" data-tip="Catalogue View">
+                            <button class="px-3 btn btn-ghost material-symbols-rounded justify-self-start" id="xlPageNavPrevious">view_module</button>
                         </div >
                     </div>
 
                     <div class="join">
-                        <a class="join-item btn btn-ghost  rounded-lg">
+                        <a class="rounded-lg join-item btn btn-ghost">
                             <span class="material-symbols-rounded" id="xlPageNavPrevious">keyboard_double_arrow_left</span>
                             Previous</a>
                             <div class="join" id="xlPages">
-                                <a class="join-item btn btn-ghost rounded-lg btn-active ">1</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">2</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">3</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">4</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">5</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">6</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">7</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">8</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">9</a>
-                                <a class="join-item btn btn-ghost  rounded-lg">10</a>
+                                <a class="rounded-lg join-item btn btn-ghost btn-active ">1</a>
+                                <a class="rounded-lg join-item btn btn-ghost">2</a>
+                                <a class="rounded-lg join-item btn btn-ghost">3</a>
+                                <a class="rounded-lg join-item btn btn-ghost">4</a>
+                                <a class="rounded-lg join-item btn btn-ghost">5</a>
+                                <a class="rounded-lg join-item btn btn-ghost">6</a>
+                                <a class="rounded-lg join-item btn btn-ghost">7</a>
+                                <a class="rounded-lg join-item btn btn-ghost">8</a>
+                                <a class="rounded-lg join-item btn btn-ghost">9</a>
+                                <a class="rounded-lg join-item btn btn-ghost">10</a>
                             </div>
-                        <a class="join-item btn btn-ghost rounded-lg">
+                        <a class="rounded-lg join-item btn btn-ghost">
                             Next<span class="material-symbols-rounded" id="xlPageNavNext">keyboard_double_arrow_right</span>
                             </a>
                     </div>
-                    <div class="tooltip z-auto opacity-50" data-tip="Archive">
-                        <button class="btn btn-ghost material-symbols-rounded justify-self-start px-3" id="xlPageNavPrevious">unarchive</button>
+                    <div class="z-auto opacity-50 tooltip" data-tip="Archive">
+                        <button class="px-3 btn btn-ghost material-symbols-rounded justify-self-start" id="xlPageNavPrevious">unarchive</button>
                     </div >
                     
                 </div>
-                
-                
             </nav>
             
 
-            <%- include('partials/thread.ejs') %>
+            <!-- -------------------- THREADS -------------------- -->
 
+            <% chanPage.threads.forEach(function(thread) { %>
+                <%- include('partials/thread.ejs', { thread }) %>
+            <% }); %>
+            
+
+            
         </main>
 
 

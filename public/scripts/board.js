@@ -1,5 +1,5 @@
-console.log(chanPage)
-console.log("current Board is ",currentBoard)
+console.log("chanPage =",chanPage)
+console.log("currentBoard =",currentBoard)
 
 
 
@@ -19,11 +19,4 @@ function initReplies(threadJSON) {
 }
 
 
-
-
-
-fetch("https://picsum.photos/400/400").then(res=>res.blob()).then(blob=>handler(blob))
-function handler(blob) {
-    document.getElementById("4chanAd").src=URL.createObjectURL(blob)
-}
 
