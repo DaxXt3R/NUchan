@@ -19,7 +19,7 @@ router.get('/:boardName',async(req,res)=>{
     let boardAd=await getBoardAd()
     
     
-    let pageImages=await getPageImages(chanPage.data)
+    let pageImages=await getPageImages(chanPage.data,req.params.boardName)
 
 
     res.render('board.ejs', {
@@ -31,21 +31,20 @@ router.get('/:boardName',async(req,res)=>{
 })
 
 
-async function getPageImages(pageJSON) {
-  const postsArr = pageJSON.threads[0].posts;
-  let pageImages = {};
+async function getPageImages(pageJSON, boardName, pageNumber = "") {
+    let pageImages = {};
+    const threadsArr = pageJSON.threads;
 
-  const fetchPromises = postsArr.map(async (element) => {
-    if (element.tim) {
-      const postImg = await getImage(`http://i.4cdn.org/biz/${element.tim}s${element.ext}`,"/img/postImgDefault2.webp");
-      pageImages[element.tim] = postImg;
+    for (const thread of threadsArr) {              // Iterate over each thread
+        for (const post of thread.posts) {          // Iterate over each post in the thread
+            if (post.tim) {                         // If the post has a tim property (only posts with images have tim)
+                const postImg = await getImage(`http://i.4cdn.org/${boardName}/${post.tim}s.jpg`, "/img/postImgDefault2.webp"); // -s images are always .jpg
+                pageImages[post.tim] = postImg;     // Save it like this => tim:"image data"
+            }
+        }
     }
-  });
-  await Promise.all(fetchPromises);
-  return pageImages;
+    return pageImages;
 }
-
-
 
 
 async function getImage(imageURL, defaultURL="/img/postImgDefault.webp") { //gets the image from the specified URL and returns it as a URL string that can be sent to the client

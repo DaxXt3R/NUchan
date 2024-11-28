@@ -1,4 +1,4 @@
-<article id="topContainer" class="bg-theme-postPrimary rounded-2xl min-w-[300px] w-[1500px] h-fit lg:max-w-[55vw] max-w-[97%] resize p-2 mt-2">
+<article id="topContainer" class="bg-theme-postPrimary rounded-2xl min-w-[300px] w-[1500px] h-auto lg:max-w-[55vw] max-w-[97%] resize p-2 mt-2 ">
     <div class="flex flex-row items-center hidden gap-1 h-fit xl:gap-3 grow text-theme-textMuted" id="threadCollapsed">
         <h1 class="text-lg font-bold truncate align-middle lg:text-2xl"><%= thread.posts[0].sub? thread.posts[0].sub:"" %></h1>
         <div class="text-base">
@@ -16,7 +16,7 @@
     </div>
 
 
-    <div id="threadExpanded" class="flex flex-col gap-1">
+    <div id="threadExpanded" class="flex flex-col gap-1 resize overflow-hidden">
         
         <!-- -------------------- POST TITLE -------------------- -->
         <div class="flex flex-row items-center gap-3 h-fit grow" id="threadTitle">
@@ -60,7 +60,7 @@
                     <img src="<%= pageImages[thread.posts[0].tim] %>" alt="" class="my-auto object-contain size-full">
                 </div>
 
-                <p class="px-2 font-normal leading-tight text-justify grow" id="threadComment">
+                <p class="px-2 font-normal leading-tight text-justify grow text-lg" id="threadComment">
                     <%- thread.posts[0].com? thread.posts[0].com:"" %>
                 </p>
                 
