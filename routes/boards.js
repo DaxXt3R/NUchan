@@ -17,31 +17,34 @@ router.get('/:boardName',async(req,res)=>{
     const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
     let boardTopAd=await getTopAd()
     let boardAd=await getBoardAd()
-    // console.log(boardAd)
+    
+    
+    let pageImages=await getPageImages(chanPage.data)
 
-    getPageImages(chanPage.data)
 
     res.render('board.ejs', {
         chanPage:chanPage.data,
         boardList:boardListJSON.data,
         currentBoard:currentBoard,
-        boardTopAd, boardAd,
+        boardTopAd, boardAd, pageImages,
     })
 })
 
+
 async function getPageImages(pageJSON) {
-    const postsArr=pageJSON.threads[0].posts
-    let pageImages={}
-    postsArr.forEach( async(element) => {
-        if (element.tim){
-            const postImg=await getImage(`http://i.4cdn.org/biz/${element.tim}${element.ext}`)
-            pageImages[element.tim]=postImg
-            logImages()
-        }
-    });
-    function logImages() {console.log(pageImages)}
-    
+  const postsArr = pageJSON.threads[0].posts;
+  let pageImages = {};
+
+  const fetchPromises = postsArr.map(async (element) => {
+    if (element.tim) {
+      const postImg = await getImage(`http://i.4cdn.org/biz/${element.tim}s${element.ext}`,"/img/postImgDefault2.webp");
+      pageImages[element.tim] = postImg;
+    }
+  });
+  await Promise.all(fetchPromises);
+  return pageImages;
 }
+
 
 
 

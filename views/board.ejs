@@ -5,6 +5,8 @@
 <script>    const chanPage= <%- JSON.stringify(chanPage) %>;    </script>
 <script>
     const currentBoard= <%- JSON.stringify(currentBoard) %>;
+    const pageImages= <%- JSON.stringify(pageImages) %>;
+    console.log("pageImages",pageImages)
 </script>
 
 <!-- -------------------- HEAD -------------------- -->
@@ -93,7 +95,7 @@
             <!-- -------------------- THREADS -------------------- -->
 
             <% chanPage.threads.forEach(function(thread) { %>
-                <%- include('partials/thread.ejs', { thread }) %>
+                <%- include('partials/thread.ejs', { thread, pageImages, }) %>
             <% }); %>
             
 

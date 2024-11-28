@@ -3947,6 +3947,11 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: .5px;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -4057,6 +4062,18 @@ details.collapse summary::-webkit-details-marker {
 .size-9 {
   width: 2.25rem;
   height: 2.25rem;
+}
+
+.size-full {
+  width: 100%;
+  height: 100%;
+}
+
+.size-max {
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .h-11 {
@@ -4607,6 +4624,11 @@ details.collapse summary::-webkit-details-marker {
 .object-left {
   -o-object-position: left;
      object-position: left;
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-0 {
