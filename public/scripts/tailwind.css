@@ -4076,6 +4076,16 @@ details.collapse summary::-webkit-details-marker {
   height: max-content;
 }
 
+.size-4 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.size-5 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .h-11 {
   height: 2.75rem;
 }
@@ -4090,10 +4100,6 @@ details.collapse summary::-webkit-details-marker {
 
 .h-9 {
   height: 2.25rem;
-}
-
-.h-\[105px\] {
-  height: 105px;
 }
 
 .h-\[128px\] {
@@ -4139,12 +4145,12 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
 }
 
-.max-h-\[36px\] {
-  max-height: 36px;
-}
-
 .max-h-\[105px\] {
   max-height: 105px;
+}
+
+.max-h-\[36px\] {
+  max-height: 36px;
 }
 
 .min-h-\[300px\] {
@@ -4230,6 +4236,10 @@ details.collapse summary::-webkit-details-marker {
 
 .max-w-\[97\%\] {
   max-width: 97%;
+}
+
+.max-w-\[95\%\] {
+  max-width: 95%;
 }
 
 .flex-1 {
@@ -4476,6 +4486,14 @@ details.collapse summary::-webkit-details-marker {
   border-width: 1px;
 }
 
+.border-4 {
+  border-width: 4px;
+}
+
+.border-\[3px\] {
+  border-width: 3px;
+}
+
 .border-t-2 {
   border-top-width: 2px;
 }
@@ -4504,6 +4522,18 @@ details.collapse summary::-webkit-details-marker {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-theme-bg {
+  border-color: var(--color-bg);
+}
+
+.border-theme-bgSecond {
+  border-color: var(--color-bg-second);
+}
+
+.border-theme-postSecond {
+  border-color: var(--color-post-second);
 }
 
 .bg-black {
@@ -4621,14 +4651,14 @@ details.collapse summary::-webkit-details-marker {
      object-fit: fill;
 }
 
-.object-left {
-  -o-object-position: left;
-     object-position: left;
-}
-
 .object-center {
   -o-object-position: center;
      object-position: center;
+}
+
+.object-left {
+  -o-object-position: left;
+     object-position: left;
 }
 
 .p-0 {
@@ -5124,6 +5154,10 @@ details.collapse summary::-webkit-details-marker {
   color: var(--color-text-accent);
 }
 
+.hover\:text-theme-textLink:hover {
+  color: var(--color-text-link);
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -5149,9 +5183,23 @@ details.collapse summary::-webkit-details-marker {
     max-width: 55vw;
   }
 
+  .lg\:max-w-\[50vw\] {
+    max-width: 50vw;
+  }
+
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
