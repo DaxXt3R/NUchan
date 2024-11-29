@@ -1,5 +1,5 @@
-<li id="topContainer" class="bg-theme-postPrimary rounded-2xl min-w-[300px] w-[1500px] h-fit lg:max-w-[50vw] max-w-[95%] resize p-2 mt-2 border-[3px] border-theme-postSecond">
-    <div class="flex flex-row items-center hidden gap-1 h-fit xl:gap-3 grow text-theme-textMuted" id="threadCollapsed">
+<li id="replyContainer" class="bg-theme-postPrimary rounded-2xl min-w-[300px] h-fit lg:max-w-[50vw] w-fit max-w-[95%] resize p-2 border-[3px] border-theme-postSecond resize overflow-hidden ">
+    <div class="flex flex-row items-center hidden gap-1 h-fit xl:gap-3 grow text-theme-textMuted" id="replyCollapsed">
         <div class="text-base">
             <span class="align-middle material-symbols-rounded" style="font-variation-settings: 'FILL' 1;">image</span>
             <small class="text-base"><%= post.images %></small>
@@ -15,12 +15,12 @@
     </div>
 
 
-    <div id="threadExpanded" class="flex flex-col gap-1">
+    <div id="replyExpanded" class="flex flex-col gap-1 h-full">
         
         <!-- -------------------- POST TITLE -------------------- -->
-        <div class="flex flex-row items-center gap-3 h-fit grow" id="threadTitle">
-            <h2 class="text-base font-bold align-middle lg:text-lg grow text-theme-textSecond"><%= post.name %> № <%= post.no %> </h2>    <!-- if there is no title it comes back as undefined and crashes, so we check -->
-            <small class="hidden text-base text-theme-textSecond xl:inline justify-self-end">
+        <div class="flex flex-row items-center gap-3 " id="replyTitle">
+            <h2 class="text-base font-bold align-middle lg:text-lg text-theme-textMuted"><%= post.name %> № <%= post.no %> </h2>    <!-- if there is no title it comes back as undefined and crashes, so we check -->
+            <small class="hidden text-base text-theme-textSecond xl:inline ml-auto">
                 x.xh ago • dd.mm.yyyy • hh:mm:ss
             </small>
             <button id="collapseButton" class="rounded-lg size-5 bg-theme-bgAccent xl:order-first" >
@@ -30,21 +30,21 @@
 
         <!-- -------------------- POST MAIN -------------------- -->
 
-        <div id="threadMain" class="flex flex-row gap-2 grow">
+        <div id="replyMain" class="flex flex-row gap-2 grow ">
 
-            <% if (pageImages[post.tim]) {  %>
-                <div id="threadImage" class="hidden xl:flex flex-col w-1/3 h-auto min-h-[300px] bg-theme-postSecond">
+            <% if (pageImages[post.tim] && post.com) {  %>
+                <div id="replyImage" class="hidden xl:flex flex-col w-1/3 h-full min-h-[200px] bg-theme-postSecond">
                     <img src="<%= pageImages[post.tim] %>" alt="" class="my-auto">
                 </div>
             <% } %>
             
-            <div  class="flex flex-col gap-2 xl:w-2/3 grow">
-                <div id="threadMainMenu" class="flex flex-row w-full gap-1 text-theme-textSecond">
-                    <div class="p-1 text-sm bg-theme-postSecond grow line-clamp-2" id="replySection">
+            <div  class="flex flex-col gap-1 xl:gap-3 grow">
+                <div id="replyMainMenu" class="flex flex-row gap-1 text-theme-textSecond justify-end">
+                    <div class="p-1 text-sm bg-theme-postSecond grow line-clamp-2 xl:inline hidden" id="replySection">
                         Replies: 
                     </div>
                     <div class="z-auto tooltip" data-tip="Report">
-                        <button class="p-2 border-0 material-symbols-rounded btn text-theme-textSecond bg-theme-postSecond" style="font-variation-settings: 'FILL' 1;">flag</button>
+                        <button class="p-2 border-0 material-symbols-rounded btn text-theme-textSecond bg-theme-postSecond " style="font-variation-settings: 'FILL' 1;">flag</button>
                     </div>
                     <div class="z-auto tooltip" data-tip="Share">
                         <button class="p-2 border-0 material-symbols-rounded btn text-theme-textSecond bg-theme-postSecond" style="font-variation-settings: 'FILL' 1;">share</button>
@@ -53,22 +53,26 @@
                         <button class="p-2 border-0 material-symbols-rounded btn text-theme-textSecond bg-theme-postSecond" style="font-variation-settings: 'FILL' 0;">bookmark</button>
                     </div>
                     <div class="z-auto tooltip" data-tip="Reply">
-                        <button class="font-bold leading-snug text-white border-0 btn bg-theme-bgAccent text-bas"><%= post.name %> <br> № <%= post.no %> </button>
+                        <button class="font-bold leading-snug text-white border-0 btn bg-theme-bgAccent text-bas grow"><%= post.name %> <br class="w-fit"> № <%= post.no %> </button>
                     </div>
                     
                 </div>
 
             <% if (pageImages[post.tim]) {  %>
-                <div id="threadImageMobile" class="xl:hidden h-[25dvh] bg-theme-postSecond w-full object-contain ">
+                <div id="replyImageMobile" class="xl:hidden h-[25dvh] bg-theme-postSecond w-full object-contain ">
                     <img src="<%= pageImages[post.tim] %>" alt="" class="my-auto object-contain size-full">
                 </div>
             <% } %>
 
-                <p class="px-2 font-normal leading-tight text-justify grow" id="threadComment">
+            <% if (post.com) { %>
+                <p class="px-2 font-normal leading-tight text-justify mb-2" id="replyComment">
                     <%- post.com? post.com:"" %>
                 </p>
-                
-                
+            <% } else { %>
+                <div id="replyImageMobile" class="bg-theme-postSecond h-full min-h-[200px]">
+                    <img src="<%= pageImages[post.tim] %>" alt="" class="m-auto object-contain h-full">
+                </div>
+            <% } %>
 
             </div>
         </div>

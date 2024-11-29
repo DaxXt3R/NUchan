@@ -1,0 +1,45 @@
+<nav class="flex items-center justify-center w-full mb-4 text-white rounded-none bg-theme-bgAccent">
+                
+    <div id="smPageNav" class="join xl:hidden">
+        <a class="rounded-lg join-item btn btn-ghost"><span class="material-symbols-rounded">keyboard_double_arrow_left</span></a>
+        <a class="rounded-lg join-item btn btn-ghost">Page 1</a>
+        <a class="rounded-lg join-item btn btn-ghost"><span class="material-symbols-rounded">keyboard_double_arrow_right</span></a>
+    </div>
+
+
+    <div class="items-center justify-between hidden xl:flex grow" id="xlPageNav ">
+        <div class="opacity-50">
+            <div class="tooltip" data-tip="Infinite Scroll">
+                <button class="px-3 btn btn-ghost material-symbols-rounded justify-self-start" id="xlPageNavPrevious">all_inclusive</button>
+            </div >
+            <div class="z-auto tooltip" data-tip="Catalogue View">
+                <button class="px-3 btn btn-ghost material-symbols-rounded justify-self-start" id="xlPageNavPrevious">view_module</button>
+            </div >
+        </div>
+
+        <div class="join">
+            <a class="rounded-lg join-item btn btn-ghost">
+                <span class="material-symbols-rounded" id="xlPageNavPrevious">keyboard_double_arrow_left</span>
+                Previous</a>
+                <div class="join" id="xlPages">
+                    <a class="rounded-lg join-item btn btn-ghost btn-active ">1</a>
+                    <a class="rounded-lg join-item btn btn-ghost">2</a>
+                    <a class="rounded-lg join-item btn btn-ghost">3</a>
+                    <a class="rounded-lg join-item btn btn-ghost">4</a>
+                    <a class="rounded-lg join-item btn btn-ghost">5</a>
+                    <a class="rounded-lg join-item btn btn-ghost">6</a>
+                    <a class="rounded-lg join-item btn btn-ghost">7</a>
+                    <a class="rounded-lg join-item btn btn-ghost">8</a>
+                    <a class="rounded-lg join-item btn btn-ghost">9</a>
+                    <a class="rounded-lg join-item btn btn-ghost">10</a>
+                </div>
+            <a class="rounded-lg join-item btn btn-ghost">
+                Next<span class="material-symbols-rounded" id="xlPageNavNext">keyboard_double_arrow_right</span>
+                </a>
+        </div>
+        <div class="z-auto opacity-50 tooltip" data-tip="Archive">
+            <button class="px-3 btn btn-ghost material-symbols-rounded justify-self-start" id="xlPageNavPrevious">unarchive</button>
+        </div >
+        
+    </div>
+</nav>

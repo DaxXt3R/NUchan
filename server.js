@@ -56,6 +56,8 @@ module.exports.getBoardListJSON= ()=>boardListJSON  //variables that get updated
 const boardsRouter=require('./routes/boards.js')
 app.use('/boards',boardsRouter)
 
+
+
 app.get("/", (req, res) => {
   res.render('home.ejs', {boardList:boardListJSON.data})
 });

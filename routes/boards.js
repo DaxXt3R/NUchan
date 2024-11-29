@@ -6,7 +6,7 @@ const chalk = require('chalk');
 const {getBoardListJSON}=require('../server')    //server.js gets the boardList JSON every hour, to not send too many requests and saves it in boardListJSON, this is imported here so you can send it with the HTML template, to render the sideBar
 
 router.get('/',(req,res)=>{
-    // res.send("viewing all boards")
+    res.send("viewing all boards")
 })
 
 router.get('/:boardName',async(req,res)=>{
@@ -17,11 +17,9 @@ router.get('/:boardName',async(req,res)=>{
     const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
     let boardTopAd=await getTopAd()
     let boardAd=await getBoardAd()
-    
-    
     let pageImages=await getPageImages(chanPage.data,req.params.boardName)
 
-
+    
     res.render('board.ejs', {
         chanPage:chanPage.data,
         boardList:boardListJSON.data,
@@ -29,6 +27,41 @@ router.get('/:boardName',async(req,res)=>{
         boardTopAd, boardAd, pageImages,
     })
 })
+
+router.get("/:boardName/:page", async(req,res)=>{
+    const chanPage=await axios.get(`https://a.4cdn.org/${req.params.boardName}/${req.params.page}.json`)
+    const boardListJSON=await getBoardListJSON();
+    const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
+    let boardTopAd=await getTopAd()
+    let boardAd=await getBoardAd()
+    let pageImages=await getPageImages(chanPage.data,req.params.boardName)
+
+    
+    res.render('board.ejs', {
+        chanPage:chanPage.data,
+        boardList:boardListJSON.data,
+        currentBoard:currentBoard,
+        boardTopAd, boardAd, pageImages,
+    })
+})
+
+
+router.get('/:boardName/thread/:id', async(req,res)=>{
+    const boardListJSON=await getBoardListJSON();
+    const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
+    let boardTopAd=await getTopAd()
+    let boardAd=await getBoardAd()
+
+    res.render('threadPage.ejs', {
+        boardList:boardListJSON.data,
+        currentBoard:currentBoard,
+        boardTopAd, boardAd,
+    })
+})
+
+
+
+
 
 
 async function getPageImages(pageJSON, boardName, pageNumber = "") {
@@ -45,7 +78,6 @@ async function getPageImages(pageJSON, boardName, pageNumber = "") {
     }
     return pageImages;
 }
-
 
 async function getImage(imageURL, defaultURL="/img/postImgDefault.webp") { //gets the image from the specified URL and returns it as a URL string that can be sent to the client
     try {
@@ -83,21 +115,6 @@ async function getBoardAd() {
     return [randomBoard, img]
     // console.log(boardAd)
 }
-
-router.get("/:boardName/:page", async(req,res)=>{
-    const chanPage=await axios.get(`https://a.4cdn.org/${req.params.boardName}/${req.params.page}.json`)
-    const boardListJSON=await getBoardListJSON();
-    const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
-    let boardTopAd=await getTopAd()
-    
-    
-    res.render('board.ejs', {
-        chanPage:chanPage.data,
-        boardList:boardListJSON.data,
-        currentBoard:currentBoard,
-        boardTopAd,
-    })
-})
 
 
 module.exports = router;

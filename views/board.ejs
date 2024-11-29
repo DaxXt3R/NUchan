@@ -6,7 +6,7 @@
 <script>
     const currentBoard= <%- JSON.stringify(currentBoard) %>;
     const pageImages= <%- JSON.stringify(pageImages) %>;
-    console.log("pageImages",pageImages)
+    // console.log("pageImages",pageImages)
 </script>
 
 <!-- -------------------- HEAD -------------------- -->
@@ -69,16 +69,11 @@
                             <span class="material-symbols-rounded" id="xlPageNavPrevious">keyboard_double_arrow_left</span>
                             Previous</a>
                             <div class="join" id="xlPages">
-                                <a class="rounded-lg join-item btn btn-ghost btn-active ">1</a>
-                                <a class="rounded-lg join-item btn btn-ghost">2</a>
-                                <a class="rounded-lg join-item btn btn-ghost">3</a>
-                                <a class="rounded-lg join-item btn btn-ghost">4</a>
-                                <a class="rounded-lg join-item btn btn-ghost">5</a>
-                                <a class="rounded-lg join-item btn btn-ghost">6</a>
-                                <a class="rounded-lg join-item btn btn-ghost">7</a>
-                                <a class="rounded-lg join-item btn btn-ghost">8</a>
-                                <a class="rounded-lg join-item btn btn-ghost">9</a>
-                                <a class="rounded-lg join-item btn btn-ghost">10</a>
+                                <% for (let i=1; i<=currentBoard.pages; i++) { %>
+                                    <a href= <%= `/boards/${currentBoard.board}/${i}` %> 
+                                        class="rounded-lg join-item btn btn-ghost"> <%= i %></a>
+                                <% } %>
+                                
                             </div>
                         <a class="rounded-lg join-item btn btn-ghost">
                             Next<span class="material-symbols-rounded" id="xlPageNavNext">keyboard_double_arrow_right</span>

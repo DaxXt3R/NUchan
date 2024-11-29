@@ -10,3 +10,5 @@ console.log("thread collapsed")
 
 const comment=document.getElementById("threadComment")
 if (comment.textContent=""){comment.classList.add("hide")}
+
+// thread.posts[0].no

@@ -1,0 +1,57 @@
+<!DOCTYPE html >
+<html lang="en" data-theme="dark" class="bg-white">
+<script defer type="module" src="/scripts/board.js"></script>
+<script defer type="module" src="/scripts/pageNav.js"></script>
+<script>
+    const currentBoard= <%- JSON.stringify(currentBoard) %>;
+</script>
+
+<!-- -------------------- HEAD -------------------- -->
+<%- include("partials/head.ejs") %>
+<head>
+    <title>/<%= currentBoard.board %>/ - <%= currentBoard.title %> - NUchan</title>
+</head>
+
+<body>
+	<div id="gridContainer" class="grid grid-rows-[auto_auto] h-screen">
+        <!-- -------------------- HEADER -------------------- -->
+        <%- include("partials/header") %>
+        <!-- -------------------- SIDEBAR -------------------- -->
+        <%- include("partials/sidebar") %>
+        <!-- -------------------- MAIN CONTENT -------------------- -->
+        <main id="mainContent" class="flex flex-col items-center col-span-2 overflow-auto overflow-x-hidden xl:col-span-1 text-theme-textPrimary bg-theme-bg">
+            <span class="w-full bg-gradient-to-b from-[#FFCCAA]">
+                <img src="<%= boardTopAd %>" alt="" id="4chanAd" class="h-[128px] m-auto my-5 object-contain border-theme-textPrimary border-[1px]">
+                <h1 class="my-5 text-2xl font-bold text-center xl:text-5xl xl:my-14 text-theme-textAccent" style="filter: drop-shadow(3px 3px 3px rgb(0 0 0 / .3));">/<%= currentBoard.board %>/ - <%= currentBoard.title %></h1>
+            </span>
+
+
+            <!-- -------------------- BLOTTER -------------------- -->
+            <span id="blotterSpan" class="flex flex-col justify-center w-full gap-8 p-4 bg-theme-bgPrimary xl:flex-row text-theme-textSecond">
+                <img src="<%= boardAd[1] %>" alt="" class="flex-1 max-h-[105px] object-contain bg-theme-postSecond max-w-[800px]">
+                <ul class="flex flex-col flex-1 max-w-[800px]" id="blotter">
+                    <li>
+                        <button class="font-bold">NUchan Blotter</button>
+                        <span class="mx-2">|</span>
+                        <button>4chan Blotter</button>
+                    </li>
+                    <hr class="my-[.5px] border-[1.5px] rounded border-theme-textSecond">
+                    <li class="truncate">01/01/2025 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, soluta?</li>
+                    <li class="truncate">01/01/2025 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, soluta?</li>
+                    <li class="truncate">01/01/2025 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, soluta?</li>
+                </ul>
+            </span>
+            
+            
+
+
+
+
+
+            
+        </main>
+
+
+    </div>
+</body>
+</html>
