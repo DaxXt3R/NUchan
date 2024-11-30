@@ -62,8 +62,6 @@ router.get('/:boardName/thread/:id', async(req,res)=>{
 
 
 
-
-
 async function getPageImages(pageJSON, boardName, pageNumber = "") {
     let pageImages = {};
     const threadsArr = pageJSON.threads;
