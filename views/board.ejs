@@ -5,8 +5,8 @@
 <script>
     const chanPage= <%- JSON.stringify(chanPage) %>;
     const currentBoard= <%- JSON.stringify(currentBoard) %>;
-    const pageImages= <%- JSON.stringify(pageImages) %>;
-    // console.log("pageImages",pageImages)
+    const images= <%- JSON.stringify(images) %>;
+    // console.log("images",images)
 </script>
 
 <!-- -------------------- HEAD -------------------- -->
@@ -90,14 +90,17 @@
             <!-- -------------------- THREADS -------------------- -->
 
             <% chanPage.threads.forEach(function(thread) { %>
-                <%- include('partials/thread.ejs', { thread, pageImages, }); %>
+                <%- include('partials/thread.ejs', { thread, images, }); %>
             <% }); %>
             
-
-            
         </main>
-
-
+        
+        
+        <button id="newButton" class="btn btn-square absolute size-28 bg-theme-bgAccent border-0 font-bold text-white text-base flex-col gap-0 bottom-[2vh] right-[2vw]">
+            <span class="content-center material-symbols-rounded" style="font-variation-settings: 'wght' 900; font-size: 40px;">add</span>
+            <h6 class="leading-tight">New<br>Thread</h6>
+        </button>
     </div>
+
 </body>
 </html>

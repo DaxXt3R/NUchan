@@ -17,14 +17,14 @@ router.get('/:boardName',async(req,res)=>{
     const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
     let boardTopAd=await getTopAd()
     let boardAd=await getBoardAd()
-    let pageImages=await getPageImages(chanPage.data,req.params.boardName)
+    let images=await getPageImages(chanPage.data,req.params.boardName)
 
     
     res.render('board.ejs', {
         chanPage:chanPage.data,
         boardList:boardListJSON.data,
         currentBoard:currentBoard,
-        boardTopAd, boardAd, pageImages,
+        boardTopAd, boardAd, images,
     })
 })
 
@@ -34,14 +34,14 @@ router.get("/:boardName/:page", async(req,res)=>{
     const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
     let boardTopAd=await getTopAd()
     let boardAd=await getBoardAd()
-    let pageImages=await getPageImages(chanPage.data,req.params.boardName)
+    let images=await getPageImages(chanPage.data,req.params.boardName)
 
     
     res.render('board.ejs', {
         chanPage:chanPage.data,
         boardList:boardListJSON.data,
         currentBoard:currentBoard,
-        boardTopAd, boardAd, pageImages,
+        boardTopAd, boardAd, images,
     })
 })
 
@@ -51,11 +51,14 @@ router.get('/:boardName/thread/:id', async(req,res)=>{
     const currentBoard=boardListJSON.data.boards.find(i=>i.board===req.params.boardName)
     let boardTopAd=await getTopAd()
     let boardAd=await getBoardAd()
+    let thread=await axios.get(`https://a.4cdn.org/${req.params.boardName}/thread/${req.params.id}.json`)
+    let images=await getThreadImages(thread.data, req.params.boardName)
 
     res.render('threadPage.ejs', {
         boardList:boardListJSON.data,
         currentBoard:currentBoard,
-        boardTopAd, boardAd,
+        thread:thread.data,
+        boardTopAd, boardAd, images,
     })
 })
 
@@ -63,18 +66,31 @@ router.get('/:boardName/thread/:id', async(req,res)=>{
 
 
 async function getPageImages(pageJSON, boardName, pageNumber = "") {
-    let pageImages = {};
+    let images = {};
     const threadsArr = pageJSON.threads;
 
     for (const thread of threadsArr) {              // Iterate over each thread
         for (const post of thread.posts) {          // Iterate over each post in the thread
             if (post.tim) {                         // If the post has a tim property (only posts with images have tim)
                 const postImg = await getImage(`http://i.4cdn.org/${boardName}/${post.tim}s.jpg`, "/img/postImgDefault2.webp"); // -s images are always .jpg
-                pageImages[post.tim] = postImg;     // Save it like this => tim:"image data"
+                images[post.tim] = postImg;     // Save it like this => tim:"image data"
             }
         }
     }
-    return pageImages;
+    return images;
+}
+
+async function getThreadImages(threadJSON, boardName){
+    let threadImages={};
+    const postsArr=threadJSON.posts;
+
+    for (const post of postsArr){
+        if (post.tim) {
+            const postImg=await getImage(`http://i.4cdn.org/${boardName}/${post.tim}s.jpg`, "/img/postImgDefault2.webp");
+            threadImages[post.tim] = postImg;
+        }
+    }
+    return threadImages;
 }
 
 async function getImage(imageURL, defaultURL="/img/postImgDefault.webp") { //gets the image from the specified URL and returns it as a URL string that can be sent to the client

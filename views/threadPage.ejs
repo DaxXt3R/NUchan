@@ -1,5 +1,7 @@
 <!DOCTYPE html >
 <html lang="en" data-theme="dark" class="bg-white">
+<script defer type="module" src="/scripts/threadPage.js"></script>
+
 <script>
     const currentBoard= <%- JSON.stringify(currentBoard) %>;
 </script>
@@ -41,6 +43,7 @@
             </span>
             
             
+            <%- include('partials/thread.ejs', { thread, images, }); %>
 
 
 
@@ -48,7 +51,10 @@
 
             
         </main>
-
+        <button id="newButton" class="btn btn-square absolute size-28 bg-theme-bgAccent border-0 font-bold text-white text-base flex-col gap-0 bottom-[2vh] right-[2vw]">
+            <span class="content-center material-symbols-rounded" style="font-variation-settings: 'wght' 900; font-size: 40px;">add</span>
+            <h6 class="leading-tight">New<br>Reply</h6>
+        </button>
 
     </div>
 </body>
