@@ -23,3 +23,22 @@ threads.forEach(thread=>{
 
 
 
+// function initPageNav() {
+
+// }
+
+// const xlPages=document.querySelectorAll("xlPages")
+
+// for (const container of xlPages){
+//     const numberButton=document.createElement("a")
+    
+//     container.append(numberButton)
+//     if (window.location.pathname==`/boards/${currentBoard.board}`) {container.firstElementChild.classList.add("btn-active")}
+
+// }
+
+// "rounded-lg join-item btn btn-ghost"
+
+function initNextPrev() {
+    
+}
