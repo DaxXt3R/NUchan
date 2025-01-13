@@ -58,7 +58,6 @@ export function toggleDarkMode() {
 
 }
 
-
 export function toggleColorTheme(theme="red") {
     colorTheme=localStorage.getItem("colorTheme")
     isDarkMode=localStorage.getItem("darkMode")

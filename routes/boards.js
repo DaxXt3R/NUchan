@@ -93,7 +93,8 @@ async function getThreadImages(threadJSON, boardName){
     return threadImages;
 }
 
-async function getImage(imageURL, defaultURL="/img/postImgDefault.webp") { //gets the image from the specified URL and returns it as a URL string that can be sent to the client
+async function getImage(imageURL, defaultURL="/img/postImgDefault.webp") 
+{ //gets the image from the specified URL and returns it as a URL string that can be sent to the client
     try {
         const response=await axios.get(imageURL, {responseType:"arraybuffer"});
         const imageBuffer = Buffer.from(response.data, 'binary').toString('base64');

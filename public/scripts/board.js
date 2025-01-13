@@ -17,28 +17,7 @@ threads.forEach(thread=>{
         thread.querySelector("#threadCollapsed").classList.add("hidden")
     })
 
-    thread.querySelector("#threadTitle").href=window.location.pathname+`/thread/${chanPage.threads[threadLinkCounter].posts[0].no}`
+    thread.querySelector("#threadTitle").href=window.location.origin+`/boards/${currentBoard.board}`+`/thread/${chanPage.threads[threadLinkCounter].posts[0].no}`
     threadLinkCounter++     //DO NOT move this line by itself, move it and the upper one together
 })
 
-
-
-// function initPageNav() {
-
-// }
-
-// const xlPages=document.querySelectorAll("xlPages")
-
-// for (const container of xlPages){
-//     const numberButton=document.createElement("a")
-    
-//     container.append(numberButton)
-//     if (window.location.pathname==`/boards/${currentBoard.board}`) {container.firstElementChild.classList.add("btn-active")}
-
-// }
-
-// "rounded-lg join-item btn btn-ghost"
-
-function initNextPrev() {
-    
-}
